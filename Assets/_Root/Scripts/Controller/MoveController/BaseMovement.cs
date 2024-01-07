@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class BaseMovement : MonoBehaviour
 {
+    [Header("Player Setting")]
     public GameObject player;
     public float moveSpeed = 5f;
     private Vector3 offset = Vector3.zero;
+    public bool CameraFollowPlayer = true;
 
     public void Awake()
     {
@@ -20,7 +22,10 @@ public class BaseMovement : MonoBehaviour
     public void Start()
     {
         player.transform.position = ConfigController.PlayerDataConfig.PlayerPositionCurrent;
-        Camera.main.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, Camera.main.transform.position.z);
+        if (CameraFollowPlayer)
+        {
+            Camera.main.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, Camera.main.transform.position.z);
+        }
         Move(offset);
     }
     private void Update()
@@ -43,7 +48,9 @@ public class BaseMovement : MonoBehaviour
         // {
         //     Camera.main.transform.position += offset * 2;
         // }
-
-        Camera.main.transform.DOMove(new Vector3(player.transform.position.x, player.transform.position.y, Camera.main.transform.position.z), 1);
+        if (CameraFollowPlayer)
+        {
+            Camera.main.transform.DOMove(new Vector3(player.transform.position.x, player.transform.position.y, Camera.main.transform.position.z), 1);
+        }
     }
 }

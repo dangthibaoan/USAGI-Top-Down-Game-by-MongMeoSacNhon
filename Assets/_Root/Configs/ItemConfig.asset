@@ -22,3 +22,6 @@ MonoBehaviour:
   - ID: npc_ludo
     Item: {fileID: 6889827800956369570, guid: 3f1b9ec3c77a7ac4ea613a190bef3176, type: 3}
     Icon: {fileID: 5084661014962647745, guid: 2f90eb840bd0cf4438d49759bc08d718, type: 3}
+  - ID: item_basket
+    Item: {fileID: 2281987797352640424, guid: 59f5a08716da0694d9795377b84881ca, type: 3}
+    Icon: {fileID: 21300000, guid: 350ab9dba8b845d4d99b233f0ee23766, type: 3}

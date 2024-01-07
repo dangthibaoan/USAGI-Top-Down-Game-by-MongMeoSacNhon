@@ -6,7 +6,11 @@ using UnityEngine.UI;
 
 public class WASDMovement : BaseMovement
 {
-    [SerializeField] private bool W, A, S, D;
+    [Header("Active Key")]
+    [SerializeField] private bool W = true;
+    [SerializeField] private bool A = true;
+    [SerializeField] private bool S = true;
+    [SerializeField] private bool D = true;
 
     public override void Movement()
     {
