@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1610bad26a46e46995855192e26af5, type: 3}
+  m_Name: TextConfig
+  m_EditorClassIdentifier: 
+  TextDatas:
+  - idText: 1
+    TextDetails:
+    - stt: 0
+      Item: {fileID: 6889827800956369570, guid: 3f1b9ec3c77a7ac4ea613a190bef3176,
+        type: 3}
+      txt: "\u1EA4y ch\xE0o nh\xE9!"
+      sttNext: 1
+    - stt: 1
+      Item: {fileID: 6889827800956369570, guid: 1de615e002a59e14399d198bf0afcda3,
+        type: 3}
+      txt: "Ch\xE0o c\u1EADu, Ludo!"
+      sttNext: 2
+    - stt: 2
+      Item: {fileID: 6889827800956369570, guid: 3f1b9ec3c77a7ac4ea613a190bef3176,
+        type: 3}
+      txt: "C\xF3 mu\u1ED1n \u0111i h\xE1i tr\xE1i c\xE2y v\u1EDBi t\u1EDB kh\xF4ng?"
+      sttNext: 3
+    - stt: 3
+      Item: {fileID: 6889827800956369570, guid: 1de615e002a59e14399d198bf0afcda3,
+        type: 3}
+      txt: "C\xF3 ch\u1EE9!"
+      sttNext: 5
+    - stt: 3
+      Item: {fileID: 6889827800956369570, guid: 1de615e002a59e14399d198bf0afcda3,
+        type: 3}
+      txt: "L\xFAc kh\xE1c nh\xE9!"
+      sttNext: 6
+    - stt: 5
+      Item: {fileID: 6889827800956369570, guid: 3f1b9ec3c77a7ac4ea613a190bef3176,
+        type: 3}
+      txt: "OK! \u0110i n\xE0o!"
+      sttNext: -1
+    - stt: 6
+      Item: {fileID: 6889827800956369570, guid: 3f1b9ec3c77a7ac4ea613a190bef3176,
+        type: 3}
+      txt: "Th\u1EBF bye bye!"
+      sttNext: -2
+  - idText: 2
+    TextDetails:
+    - stt: 0
+      Item: {fileID: 6889827800956369570, guid: 99eff968bd21e5844997ba9b7cbb9e76,
+        type: 3}
+      txt: "Ch\xE0o c\u01B0ng!"
+      sttNext: 1
+    - stt: 1
+      Item: {fileID: 6889827800956369570, guid: 1de615e002a59e14399d198bf0afcda3,
+        type: 3}
+      txt: "Ch\xE0o ch\u1ECB Luna \u1EA1!"
+      sttNext: 2
+    - stt: 2
+      Item: {fileID: 6889827800956369570, guid: 99eff968bd21e5844997ba9b7cbb9e76,
+        type: 3}
+      txt: "C\xF2n n\u0103m ph\xFAt n\u1EEFa l\xE0 \u0111\xF3ng c\u1ED5ng tr\u01B0\u1EDDng
+        r\u1ED3i \u0111\u1EA5y!"
+      sttNext: 3
+    - stt: 3
+      Item: {fileID: 6889827800956369570, guid: 99eff968bd21e5844997ba9b7cbb9e76,
+        type: 3}
+      txt: "\u0110i nhanh \u0111i kh\xF4ng mu\u1ED9n h\u1ECDc n\xE0o!"
+      sttNext: 4
+    - stt: 4
+      Item: {fileID: 6889827800956369570, guid: 1de615e002a59e14399d198bf0afcda3,
+        type: 3}
+      txt: "D\u1EA1 v\xE2ng!"
+      sttNext: -1
