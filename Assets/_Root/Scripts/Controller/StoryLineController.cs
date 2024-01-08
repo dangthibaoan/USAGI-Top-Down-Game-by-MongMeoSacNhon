@@ -9,7 +9,7 @@ using DG.Tweening;
 public class StoryLineController : Singleton<StoryLineController>
 {
     [Header("UI Story Line")]
-    [SerializeField] private Transform Canvas;
+    [SerializeField] private Transform ClickArea;
     [SerializeField] private Transform TalkArea;
     [SerializeField] private TMP_Text NameTalker, TalkText;
     [SerializeField] private Image TalkCursor;
@@ -57,7 +57,7 @@ public class StoryLineController : Singleton<StoryLineController>
 
         TalkArea.gameObject.SetActive(true);
 
-        Canvas.gameObject.GetComponent<Button>().enabled = true;
+        ClickArea.gameObject.GetComponent<Button>().enabled = true;
 
         int next = ConfigController.StoryLineConfig.TextDatas[StoryLineCurrent.indexTextDataCurrent].TextDetails[indexTextDetailCurrent].sttNext;
         indexTextDetailCurrent = next;
