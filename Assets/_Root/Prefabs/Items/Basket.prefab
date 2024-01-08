@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d3cf22a040bd846b6c0aab825aa89e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 2281987797352640424}
   speed: 30
   rb: {fileID: 1121392775327591354}
   mapWidth: 5
