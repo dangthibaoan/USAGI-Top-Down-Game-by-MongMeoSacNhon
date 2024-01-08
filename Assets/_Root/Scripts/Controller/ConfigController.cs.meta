@@ -3,7 +3,13 @@ guid: d6892104efbc70c4c84a7aa7db38a1cd
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - sound: {instanceID: 0}
+  - map: {instanceID: 0}
+  - tile: {instanceID: 0}
+  - item: {instanceID: 0}
+  - storyLine: {instanceID: 0}
+  - config_PlayerData: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
