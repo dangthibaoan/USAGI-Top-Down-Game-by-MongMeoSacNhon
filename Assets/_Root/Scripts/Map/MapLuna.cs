@@ -17,7 +17,6 @@ public class MapLuna : Map
     [SerializeField] private float CountDown2 = 0;
     [SerializeField] private List<Sprite> ListNotFruitImages;
     [SerializeField] private List<Item> ListItemCurrent;
-    Dictionary<Item, Vector3> dic = new Dictionary<Item, Vector3>();
     private void Start()
     {
         PopupController.Instance.GetPopup<UIPopup>().BtnWASDSetActive(false, true, false, true);
@@ -81,6 +80,8 @@ public class MapLuna : Map
             var spawnPos = SpawnPoint.position + Vector3.right * randomX;
             item.transform.DOMove(spawnPos, 0);
             item.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            item.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            item.GetComponent<Rigidbody2D>().angularVelocity = 0;
         }
     }
 }
