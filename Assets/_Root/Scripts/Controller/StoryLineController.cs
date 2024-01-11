@@ -37,6 +37,8 @@ public class StoryLineController : Singleton<StoryLineController>
     }
     public void GetLine()
     {
+        HideTalk();
+
         if (!DialogController.Instance.isTalking) return;
 
         if (DialogController.Instance.isCreateReplyDialog) return;
@@ -48,7 +50,6 @@ public class StoryLineController : Singleton<StoryLineController>
     {
         if (!TalkCursor.gameObject.activeSelf) return;
 
-        HideTalk();
         GetLine();
     }
     public void HideTalk()
