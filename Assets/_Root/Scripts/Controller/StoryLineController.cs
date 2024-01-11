@@ -115,7 +115,7 @@ public class StoryLineController : Singleton<StoryLineController>
         TalkCursor.transform.position = TalkCursorPositionOrigin;
         if (status)
         {
-            TalkCursor.transform.DOMove(TalkCursorPositionOrigin, 0).SetDelay(2).OnComplete(() =>
+            TalkCursor.transform.DOMove(TalkCursorPositionOrigin, 0).SetDelay(1).OnComplete(() =>
             {
                 TalkCursor.gameObject.SetActive(true);
                 TalkCursor.transform.DOMove(TalkCursorPositionOrigin + Vector3.down * 0.06f, 0.4f).SetLoops(-1, LoopType.Yoyo);
