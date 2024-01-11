@@ -37,7 +37,6 @@ public class StoryLineController : Singleton<StoryLineController>
     }
     public void GetLine()
     {
-        HideTalk();
         if (!DialogController.Instance.isTalking) return;
 
         if (DialogController.Instance.isCreateReplyDialog) return;
