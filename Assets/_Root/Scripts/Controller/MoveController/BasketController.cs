@@ -37,9 +37,9 @@ public class BasketController : BaseMovement
 
     }
 
-    private void OnCollisionEnter2D()
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        EndGame();
+        Destroy(other.gameObject);
     }
 
     public void EndGame()
