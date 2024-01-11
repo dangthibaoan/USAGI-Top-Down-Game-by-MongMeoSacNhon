@@ -18,7 +18,7 @@ public class LunaStoryLines : StoryLine
 
         if (indexTextDetailCurrent < 0)
         {
-            StoryLineController.Instance.HideTalk();
+            StoryLineController.Instance.EndStoryLine();
 
             if (indexTextDetailCurrent == -1)
             {

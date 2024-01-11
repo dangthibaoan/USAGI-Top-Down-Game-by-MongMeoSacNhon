@@ -11,9 +11,10 @@ public class StoryLineController : Singleton<StoryLineController>
     [Header("UI Story Line")]
     [SerializeField] private Transform ClickArea;
     [SerializeField] private Transform TalkArea;
+    [SerializeField] private Transform TalkBox;
     [SerializeField] private TMP_Text NameTalker, TalkText;
     [SerializeField] private Image TalkCursor;
-    [SerializeField] private Vector3 TalkCursorPositionOrigin;
+    [SerializeField] private Vector3 TalkCursorPositionOrigin, TalkBoxPositionOrigin;
 
     [Header("Story Line Current")]
     [SerializeField] private int indexTextDetailCurrent;
@@ -22,6 +23,7 @@ public class StoryLineController : Singleton<StoryLineController>
     private void Start()
     {
         TalkCursorPositionOrigin = TalkCursor.transform.position;
+        TalkBoxPositionOrigin = TalkBox.transform.position;
         ResetTalkArea();
     }
     public void SetStoryLine(StoryLine storyLine)
@@ -46,16 +48,26 @@ public class StoryLineController : Singleton<StoryLineController>
     {
         if (!TalkCursor.gameObject.activeSelf) return;
 
+        HideTalk();
         GetLine();
+    }
+    public void HideTalk()
+    {
+        TalkBox.gameObject.SetActive(false);
+        TalkBox.DOMove(TalkBoxPositionOrigin + Vector3.down * 1, 0);
     }
     public void ShowTalk()
     {
         PopupController.Instance.Hide<UIPopup>();
+
         ConfigController.PlayerDataConfig.isActiveMovement = false;
+
         DialogController.Instance.isTalking = true;
         DialogController.Instance.isCreateReplyDialog = false;
 
         TalkArea.gameObject.SetActive(true);
+        TalkBox.gameObject.SetActive(true);
+        TalkBox.DOMove(TalkBoxPositionOrigin, 0.5f);
 
         ClickArea.gameObject.GetComponent<Button>().enabled = true;
 
@@ -82,7 +94,7 @@ public class StoryLineController : Singleton<StoryLineController>
         NameTalker.text = nameTalker;
         TalkText.text = text;
     }
-    public void HideTalk()
+    public void EndStoryLine()
     {
         ConfigController.PlayerDataConfig.isActiveMovement = true;
         ResetTalkArea();
