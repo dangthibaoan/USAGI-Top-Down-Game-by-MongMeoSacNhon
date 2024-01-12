@@ -70,8 +70,6 @@ public class StoryLineController : Singleton<StoryLineController>
         TalkBox.gameObject.SetActive(true);
         TalkBox.DOMove(TalkBoxPositionOrigin, 0.5f);
 
-        ClickArea.gameObject.GetComponent<Button>().enabled = true;
-
         int next = ConfigController.StoryLineConfig.TextDatas[StoryLineCurrent.indexTextDataCurrent].TextDetails[indexTextDetailCurrent].sttNext;
         indexTextDetailCurrent = next;
 
