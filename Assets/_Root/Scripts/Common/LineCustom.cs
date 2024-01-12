@@ -25,10 +25,9 @@ public class LineCustom : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
     {
         if (canClick)
         {
-            onPress?.Invoke();
+            if (image != null) image.ChangeColor();
 
-            if (image == null) return;
-            image.ChangeColor();
+            onPress?.Invoke();
         }
     }
 
@@ -38,13 +37,12 @@ public class LineCustom : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
         {
             SoundController.Instance.PlayOnce(soundType);
 
+            if (image != null) image.RechangeColor();
+
             if (isMoveEnter)
             {
                 onClick?.Invoke();
             }
-
-            if (image == null) return;
-            image.RechangeColor();
         }
     }
 
