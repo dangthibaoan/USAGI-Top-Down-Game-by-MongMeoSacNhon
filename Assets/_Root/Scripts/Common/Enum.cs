@@ -5,7 +5,8 @@ public enum SoundType
     BackgroundMusicOnGame,
     Win,
     Lose,
-    Walk
+    Walk,
+    TalkClick
 }
 public enum DialogType
 {
