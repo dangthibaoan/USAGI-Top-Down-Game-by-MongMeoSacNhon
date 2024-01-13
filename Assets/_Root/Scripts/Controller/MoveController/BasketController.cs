@@ -14,7 +14,6 @@ public class BasketController : BaseMovement
 
     public override void Start()
     {
-        rb = transform.parent.GetComponent<Rigidbody2D>();
         base.Start();
     }
 
