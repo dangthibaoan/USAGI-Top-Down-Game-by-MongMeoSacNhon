@@ -7,7 +7,7 @@ public class UsagiAnimation : MonoBehaviour
 
     [Header("SFX Setting")]
     [SerializeField] private SoundType SfxWalk = SoundType.Walk;
-    [SerializeField] private float CountDown = 0.3f;
+    [SerializeField] private float CountDown = 0.2f;
 
     private void Update()
     {
@@ -15,12 +15,8 @@ public class UsagiAnimation : MonoBehaviour
 
         if (ConfigController.PlayerDataConfig.isMoving)
         {
-            //Play anim run
-            animator.SetInteger("Status", ConfigController.PlayerDataConfig.status);
-            CountDown += Time.deltaTime;
-            if (CountDown < 0.3) return;
-            CountDown = 0;
-            SoundController.Instance.PlayOnce(SfxWalk);
+            //Play anim walk
+            PlayAnimWalk(ConfigController.PlayerDataConfig.status);
         }
         else
         {
@@ -43,5 +39,13 @@ public class UsagiAnimation : MonoBehaviour
                 default: break;
             }
         }
+    }
+    void PlayAnimWalk(int status)
+    {
+        animator.SetInteger("Status", status);
+        CountDown += Time.deltaTime;
+        if (CountDown < 0.2) return;
+        CountDown = 0;
+        SoundController.Instance.PlayOnce(SfxWalk);
     }
 }
