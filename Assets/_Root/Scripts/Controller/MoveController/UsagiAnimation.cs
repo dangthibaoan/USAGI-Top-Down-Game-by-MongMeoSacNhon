@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class UsagiAnimation : MonoBehaviour
 {
+    [Header("Animation Setting")]
     [SerializeField] private Animator animator;
-    private void Awake()
-    {
-        animator = transform.parent.GetComponentInChildren<Animator>();
-    }
+
+    [Header("SFX Setting")]
+    [SerializeField] private SoundType SfxWalk = SoundType.Walk;
+    [SerializeField] private float CountDown = 0.3f;
+
     private void Update()
     {
         if (animator == null) return;
@@ -15,9 +17,14 @@ public class UsagiAnimation : MonoBehaviour
         {
             //Play anim run
             animator.SetInteger("Status", ConfigController.PlayerDataConfig.status);
+            CountDown += Time.deltaTime;
+            if (CountDown < 0.3) return;
+            CountDown = 0;
+            SoundController.Instance.PlayOnce(SfxWalk);
         }
         else
         {
+            CountDown = 0.3f;
             //Play anim idle
             switch (ConfigController.PlayerDataConfig.status)
             {

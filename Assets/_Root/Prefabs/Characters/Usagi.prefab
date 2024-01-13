@@ -259,6 +259,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1897842436178310486}
+  SfxWalk: 5
+  CountDown: 0.3
 --- !u!114 &8939910560139998630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,6 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6889827800956369570}
   moveSpeed: 5
+  CameraFollowPlayer: 1
   W: 1
   A: 1
   S: 1
