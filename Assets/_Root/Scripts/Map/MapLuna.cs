@@ -1,21 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class MapLuna : Map
 {
-    [Header("Map Data")]
-    [SerializeField] private float CurrentScore;
-
     [Header("Map Setting")]
+    [SerializeField] private TMP_Text TxtCurrentScore;
+    [SerializeField] private TMP_Text TxtMaxScore;
     [SerializeField] private Item SpawnPrefab;
     [SerializeField] private Transform SpawnPoint;
     [SerializeField] private float CountDown = 0;
     [SerializeField] private List<Sprite> ListFruitImages;
     [SerializeField] private float CountDown2 = 0;
     [SerializeField] private List<Sprite> ListNotFruitImages;
+    private void Awake()
+    {
+        TxtMaxScore.text = Data.MaxScore + "";
+        TxtCurrentScore.text = 0 + "";
+    }
     private void Start()
     {
         PopupController.Instance.GetPopup<UIPopup>().BtnWASDSetActive(false, true, false, true);
@@ -64,10 +70,7 @@ public class MapLuna : Map
         }
         Debug.Log(spawnPos + " - " + randomImage + "/" + ListNotFruitImages.Count);
     }
-    public void IncreaseScore(float score)
-    {
-        CurrentScore += score;
-    }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.TryGetComponent<Item>(out var item))
