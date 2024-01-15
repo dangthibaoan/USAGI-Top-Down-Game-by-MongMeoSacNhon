@@ -681,19 +681,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f978dafcd17b4fd45a1fca3dac3ad0f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentScore: 0
+  MapLunaData: {fileID: 11400000, guid: 3fde47d2956a1e64b8f0177e8b3293b7, type: 2}
   TxtCurrentScore: {fileID: 4241663044360588531}
   TxtMaxScore: {fileID: 595920314839244373}
   SpawnPrefab: {fileID: 4213516035033124808, guid: 2b97b241621e4d740b63b1e23b8138a2,
     type: 3}
   SpawnPoint: {fileID: 8437335097158055385}
-  CountDown: 0
   ListFruitImages:
   - {fileID: 21300000, guid: 286ec532560ddc44f866007620be4675, type: 3}
   - {fileID: 21300000, guid: 3335357d2de0a3a449cab4d5e70b7d31, type: 3}
   - {fileID: 21300000, guid: 1dc2b691e30a3a3409f3461fedf3d63a, type: 3}
   - {fileID: 21300000, guid: 5019530798ad55546ad344379e370b54, type: 3}
-  CountDown2: 0
   ListNotFruitImages:
   - {fileID: 21300000, guid: 7e211d0934c04d645980f8814c48c1be, type: 3}
 --- !u!1001 &1510918758838112410

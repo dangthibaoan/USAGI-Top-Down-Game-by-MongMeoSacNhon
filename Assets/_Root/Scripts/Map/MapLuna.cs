@@ -3,20 +3,18 @@ using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
-using UnityEngine.UI;
 
 public class MapLuna : Map
 {
     [Header("Map Setting")]
+    [SerializeField] private Config_MapLunaData MapLunaData;
     [SerializeField] private TMP_Text TxtCurrentScore;
     [SerializeField] private TMP_Text TxtMaxScore;
     [SerializeField] private Item SpawnPrefab;
     [SerializeField] private Transform SpawnPoint;
-    [SerializeField] private float CountDown = 0;
-    [SerializeField] private List<Sprite> ListFruitImages;
-    [SerializeField] private float CountDown2 = 0;
-    [SerializeField] private List<Sprite> ListNotFruitImages;
+    private float CountDown = 0;
+    private float CountDown2 = 0;
+
     private void Awake()
     {
         TxtMaxScore.text = Data.MaxScore + "";
@@ -49,12 +47,12 @@ public class MapLuna : Map
 
         var fruit = Instantiate(SpawnPrefab, spawnPos, Quaternion.identity, SpawnPoint);
 
-        int randomImage = Random.Range(0, ListFruitImages.Count - 1);
-        if (randomImage < ListFruitImages.Count)
+        int randomImage = Random.Range(0, MapLunaData.ListFruitImages.Count - 1);
+        if (randomImage < MapLunaData.ListFruitImages.Count)
         {
-            fruit.itemImage.sprite = ListFruitImages[randomImage];
+            fruit.itemImage.sprite = MapLunaData.ListFruitImages[randomImage];
         }
-        Debug.Log(spawnPos + " - " + randomImage + "/" + ListFruitImages.Count);
+        Debug.Log(spawnPos + " - " + randomImage + "/" + MapLunaData.ListFruitImages.Count);
     }
     private void SpawnNotFruit()
     {
@@ -63,12 +61,12 @@ public class MapLuna : Map
 
         var notfruit = Instantiate(SpawnPrefab, spawnPos, Quaternion.identity, SpawnPoint);
 
-        int randomImage = Random.Range(0, ListFruitImages.Count - 1);
-        if (randomImage < ListNotFruitImages.Count)
+        int randomImage = Random.Range(0, MapLunaData.ListFruitImages.Count - 1);
+        if (randomImage < MapLunaData.ListNotFruitImages.Count)
         {
-            notfruit.itemImage.sprite = ListNotFruitImages[randomImage];
+            notfruit.itemImage.sprite = MapLunaData.ListNotFruitImages[randomImage];
         }
-        Debug.Log(spawnPos + " - " + randomImage + "/" + ListNotFruitImages.Count);
+        Debug.Log(spawnPos + " - " + randomImage + "/" + MapLunaData.ListNotFruitImages.Count);
     }
 
     private void OnTriggerExit2D(Collider2D other)
