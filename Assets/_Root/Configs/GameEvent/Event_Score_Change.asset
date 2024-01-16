@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b3782880cf1abe44af1ecd19ab8d237, type: 3}
   m_Name: Event_Score_Change
   m_EditorClassIdentifier: 
-  DeveloperDescription: 
+  DeveloperDescription: Raised by basketController, when score current change

@@ -93,9 +93,4 @@ public class MapLuna : Map
 
         }
     }
-
-    public void LogIsSpawnPrefab()
-    {
-        Debug.Log("IsSpawnPrefab = " + IsSpawnPrefab);
-    }
 }
