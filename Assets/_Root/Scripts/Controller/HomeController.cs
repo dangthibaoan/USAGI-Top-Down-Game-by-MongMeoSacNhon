@@ -4,7 +4,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 
-public class HomeController : MonoBehaviour
+public class HomeController : Singleton<HomeController>
 {
     void Start()
     {
