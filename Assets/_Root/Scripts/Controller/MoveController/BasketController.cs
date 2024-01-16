@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,17 +14,26 @@ public class BasketController : BaseMovement
     [SerializeField] private float MouseSpeed = 5f; // tốc độ di chuyển bằng chuột
     [SerializeField] private float slowness = 10f; // slow motion khi player thua
 
+    [Header("HP settings")]
+    public int MaxHP = 3;
+    [SerializeField] private TMP_Text TxtHP;
+
     [Header("Events")]
     [SerializeField] private UnityEvent OnSuccessGetPoint;
 
     public override void Start()
     {
         base.Start();
+        TxtHP.text = "×" + MaxHP;
+        ConfigController.PlayerDataConfig.isActiveMovement = true;
+        rb.bodyType = RigidbodyType2D.Dynamic;
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
+        if (!ConfigController.PlayerDataConfig.isActiveMovement) return;
+
         // use 'A' or 'D' or right/left arrow to move
         float x = Input.GetAxis("Horizontal") * Time.fixedDeltaTime * speed;
 
@@ -47,10 +57,16 @@ public class BasketController : BaseMovement
         if (other.gameObject.TryGetComponent<Item>(out Item item))
         {
             ScoreController.currentScore += item.itemScore;
+
+            if (item.itemScore < 0) MaxHP--;
+
             if (ScoreController.currentScore < 0) ScoreController.currentScore = 0;
             // if (MapLuna.currentScore > Data.MaxScore) Data.MaxScore = MapLuna.currentScore;
 
             OnSuccessGetPoint.Invoke();
+
+            TxtHP.text = "×" + MaxHP;
+            if (MaxHP <= 0) EndGame();
         }
 
         Destroy(other.gameObject);
@@ -58,6 +74,7 @@ public class BasketController : BaseMovement
 
     public void EndGame()
     {
+        MapLuna.IsSpawnPrefab = false;
         StartCoroutine(RestartLevel());
     }
 
@@ -74,6 +91,8 @@ public class BasketController : BaseMovement
         Time.timeScale = 1f; // reset time ve bt
         Time.fixedDeltaTime = Time.fixedDeltaTime * slowness; // tra lai fixdeltaTime ban dau
 
+        ConfigController.PlayerDataConfig.isActiveMovement = false;
+        rb.bodyType = RigidbodyType2D.Kinematic;
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

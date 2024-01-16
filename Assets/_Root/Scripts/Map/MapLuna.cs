@@ -12,13 +12,17 @@ public class MapLuna : Map
     [SerializeField] private Transform SpawnPoint;
     private float CountDown = 0;
     private float CountDown2 = 0;
+    public static bool IsSpawnPrefab;
 
     private void Start()
     {
+        IsSpawnPrefab = true;
         PopupController.Instance.GetPopup<UIPopup>().BtnWASDSetActive(false, true, false, true);
     }
     private void Update()
     {
+        if (!IsSpawnPrefab) return;
+
         CountDown += Time.deltaTime;
         if (CountDown < 0.5) return;
         CountDown = 0;
@@ -47,7 +51,7 @@ public class MapLuna : Map
             fruit.itemScore = MapLunaData.ListFruitImages[randomImage].data_score;
             fruit.GetComponent<Rigidbody2D>().gravityScale = 0.1f;
         }
-        Debug.Log(spawnPos + " - " + randomImage + "/" + MapLunaData.ListFruitImages.Count);
+        // Debug.Log(spawnPos + " - " + randomImage + "/" + MapLunaData.ListFruitImages.Count);
     }
     private void SpawnNotFruit()
     {
@@ -63,13 +67,19 @@ public class MapLuna : Map
             notfruit.itemScore = MapLunaData.ListNotFruitImages[randomImage].data_score;
             notfruit.GetComponent<Rigidbody2D>().gravityScale = 0.5f;
         }
-        Debug.Log(spawnPos + " - " + randomImage + "/" + MapLunaData.ListNotFruitImages.Count);
+        // Debug.Log(spawnPos + " - " + randomImage + "/" + MapLunaData.ListNotFruitImages.Count);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.TryGetComponent<Item>(out var item))
         {
+            if (item.itemScore < 0 || !IsSpawnPrefab)
+            {
+                Destroy(item.gameObject);
+                return;
+            }
+
             item.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
             float randomX = Random.Range(-5f, 5f);
             var spawnPos = SpawnPoint.position + Vector3.right * randomX;
@@ -84,5 +94,8 @@ public class MapLuna : Map
         }
     }
 
-
+    public void LogIsSpawnPrefab()
+    {
+        Debug.Log("IsSpawnPrefab = " + IsSpawnPrefab);
+    }
 }
