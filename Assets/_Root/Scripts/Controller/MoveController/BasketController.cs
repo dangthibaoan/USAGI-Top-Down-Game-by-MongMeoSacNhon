@@ -61,12 +61,15 @@ public class BasketController : BaseMovement
             if (item.itemScore < 0) MaxHP--;
 
             if (ScoreController.currentScore < 0) ScoreController.currentScore = 0;
-            // if (MapLuna.currentScore > Data.MaxScore) Data.MaxScore = MapLuna.currentScore;
 
             OnSuccessGetPoint.Invoke();
 
             TxtHP.text = "×" + MaxHP;
-            if (MaxHP <= 0) EndGame();
+            if (MaxHP <= 0)
+            {
+                this.GetComponent<BoxCollider2D>().enabled = false;
+                EndGame();
+            }
         }
 
         Destroy(other.gameObject);
@@ -75,6 +78,8 @@ public class BasketController : BaseMovement
     public void EndGame()
     {
         MapLuna.IsSpawnPrefab = false;
+        if (ScoreController.currentScore > Data.MaxScore) Data.MaxScore = ScoreController.currentScore;
+
         StartCoroutine(RestartLevel());
     }
 
