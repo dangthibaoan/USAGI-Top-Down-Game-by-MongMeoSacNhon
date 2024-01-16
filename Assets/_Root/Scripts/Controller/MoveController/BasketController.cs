@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BasketController : BaseMovement
 {
@@ -11,6 +12,9 @@ public class BasketController : BaseMovement
     // giới hạn chiều ngang di chuyển của player tránh nó chạy ra khỏi màn hình
     [SerializeField] private float MouseSpeed = 5f; // tốc độ di chuyển bằng chuột
     [SerializeField] private float slowness = 10f; // slow motion khi player thua
+
+    [Header("Events")]
+    [SerializeField] private UnityEvent OnSuccessGetPoint;
 
     public override void Start()
     {
@@ -38,6 +42,17 @@ public class BasketController : BaseMovement
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        other.collider.enabled = false;
+
+        if (other.gameObject.TryGetComponent<Item>(out Item item))
+        {
+            MapLuna.currentScore += item.itemScore;
+            if (MapLuna.currentScore < 0) MapLuna.currentScore = 0;
+            // if (MapLuna.currentScore > Data.MaxScore) Data.MaxScore = MapLuna.currentScore;
+
+            OnSuccessGetPoint.Invoke();
+        }
+
         Destroy(other.gameObject);
     }
 

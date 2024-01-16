@@ -7,6 +7,8 @@ using UnityEngine;
 public class MapLuna : Map
 {
     [Header("Map Setting")]
+    [SerializeField] private GameEvent EventScoreChange;
+    public static int currentScore;
     [SerializeField] private Config_MapLunaData MapLunaData;
     [SerializeField] private TMP_Text TxtCurrentScore;
     [SerializeField] private TMP_Text TxtMaxScore;
@@ -17,11 +19,11 @@ public class MapLuna : Map
 
     private void Awake()
     {
-        TxtMaxScore.text = Data.MaxScore + "";
-        TxtCurrentScore.text = 0 + "";
+        ScoreChange();
     }
     private void Start()
     {
+        currentScore = 0;
         PopupController.Instance.GetPopup<UIPopup>().BtnWASDSetActive(false, true, false, true);
     }
     private void Update()
@@ -50,7 +52,9 @@ public class MapLuna : Map
         int randomImage = Random.Range(0, MapLunaData.ListFruitImages.Count - 1);
         if (randomImage < MapLunaData.ListFruitImages.Count)
         {
-            fruit.itemImage.sprite = MapLunaData.ListFruitImages[randomImage];
+            fruit.itemImage.sprite = MapLunaData.ListFruitImages[randomImage].data_image;
+            fruit.itemScore = MapLunaData.ListFruitImages[randomImage].data_score;
+            fruit.GetComponent<Rigidbody2D>().gravityScale = 0.1f;
         }
         Debug.Log(spawnPos + " - " + randomImage + "/" + MapLunaData.ListFruitImages.Count);
     }
@@ -64,7 +68,9 @@ public class MapLuna : Map
         int randomImage = Random.Range(0, MapLunaData.ListFruitImages.Count - 1);
         if (randomImage < MapLunaData.ListNotFruitImages.Count)
         {
-            notfruit.itemImage.sprite = MapLunaData.ListNotFruitImages[randomImage];
+            notfruit.itemImage.sprite = MapLunaData.ListNotFruitImages[randomImage].data_image;
+            notfruit.itemScore = MapLunaData.ListNotFruitImages[randomImage].data_score;
+            notfruit.GetComponent<Rigidbody2D>().gravityScale = 0.5f;
         }
         Debug.Log(spawnPos + " - " + randomImage + "/" + MapLunaData.ListNotFruitImages.Count);
     }
@@ -85,5 +91,19 @@ public class MapLuna : Map
             });
 
         }
+    }
+
+    private void OnEnable()
+    {
+        EventScoreChange.Subscribe(ScoreChange);
+    }
+    private void OnDisable()
+    {
+        EventScoreChange.Unsubscribe(ScoreChange);
+    }
+    public void ScoreChange()
+    {
+        TxtMaxScore.text = Data.MaxScore + "";
+        TxtCurrentScore.text = currentScore + "";
     }
 }

@@ -7,4 +7,5 @@ public class Item : MonoBehaviour
 {
     public string itemName;
     public Image itemImage;
+    public int itemScore;
 }
