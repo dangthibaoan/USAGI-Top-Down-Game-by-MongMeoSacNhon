@@ -46,8 +46,8 @@ public class BasketController : BaseMovement
 
         if (other.gameObject.TryGetComponent<Item>(out Item item))
         {
-            MapLuna.currentScore += item.itemScore;
-            if (MapLuna.currentScore < 0) MapLuna.currentScore = 0;
+            ScoreController.currentScore += item.itemScore;
+            if (ScoreController.currentScore < 0) ScoreController.currentScore = 0;
             // if (MapLuna.currentScore > Data.MaxScore) Data.MaxScore = MapLuna.currentScore;
 
             OnSuccessGetPoint.Invoke();

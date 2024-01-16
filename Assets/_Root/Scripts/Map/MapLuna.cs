@@ -7,23 +7,14 @@ using UnityEngine;
 public class MapLuna : Map
 {
     [Header("Map Setting")]
-    [SerializeField] private GameEvent EventScoreChange;
-    public static int currentScore;
     [SerializeField] private Config_MapLunaData MapLunaData;
-    [SerializeField] private TMP_Text TxtCurrentScore;
-    [SerializeField] private TMP_Text TxtMaxScore;
     [SerializeField] private Item SpawnPrefab;
     [SerializeField] private Transform SpawnPoint;
     private float CountDown = 0;
     private float CountDown2 = 0;
 
-    private void Awake()
-    {
-        ScoreChange();
-    }
     private void Start()
     {
-        currentScore = 0;
         PopupController.Instance.GetPopup<UIPopup>().BtnWASDSetActive(false, true, false, true);
     }
     private void Update()
@@ -93,17 +84,5 @@ public class MapLuna : Map
         }
     }
 
-    private void OnEnable()
-    {
-        EventScoreChange.Subscribe(ScoreChange);
-    }
-    private void OnDisable()
-    {
-        EventScoreChange.Unsubscribe(ScoreChange);
-    }
-    public void ScoreChange()
-    {
-        TxtMaxScore.text = Data.MaxScore + "";
-        TxtCurrentScore.text = currentScore + "";
-    }
+
 }
