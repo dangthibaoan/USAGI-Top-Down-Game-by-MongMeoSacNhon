@@ -99,5 +99,6 @@ public class BasketController : BaseMovement
         ConfigController.PlayerDataConfig.isActiveMovement = false;
         rb.bodyType = RigidbodyType2D.Kinematic;
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        PopupController.Instance.Show<FinishGamePopup>();
     }
 }
