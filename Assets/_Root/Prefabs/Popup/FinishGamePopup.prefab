@@ -2186,6 +2186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ImageCongrats: {fileID: 2679395644521263260}
   ImageNewRecord: {fileID: 2512782297767256015}
-  CurrentScore: {fileID: 0}
-  MaxScore: {fileID: 0}
+  Timer: {fileID: 4261902166827658256}
+  CurrentScore: {fileID: 8354867334831372976}
+  MaxScore: {fileID: 7112389858340856438}
   FinishMusic: 3

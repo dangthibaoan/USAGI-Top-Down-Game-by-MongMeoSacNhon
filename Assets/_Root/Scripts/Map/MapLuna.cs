@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -13,9 +14,11 @@ public class MapLuna : Map
     private float CountDown = 0;
     private float CountDown2 = 0;
     public static bool IsSpawnPrefab;
+    public static float Timer;
 
     private void Start()
     {
+        Timer = 0;
         IsSpawnPrefab = true;
         PopupController.Instance.GetPopup<UIPopup>().BtnWASDSetActive(false, true, false, true);
     }
@@ -23,6 +26,7 @@ public class MapLuna : Map
     {
         if (!IsSpawnPrefab) return;
 
+        Timer += Time.deltaTime;
         CountDown += Time.deltaTime;
         if (CountDown < 0.5) return;
         CountDown = 0;

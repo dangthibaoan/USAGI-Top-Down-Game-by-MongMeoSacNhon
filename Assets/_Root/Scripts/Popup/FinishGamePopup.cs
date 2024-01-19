@@ -8,7 +8,7 @@ public class FinishGamePopup : Popup
 {
     [SerializeField] private GameObject ImageCongrats;
     [SerializeField] private GameObject ImageNewRecord;
-    [SerializeField] private TMP_Text CurrentScore, MaxScore;
+    [SerializeField] private TMP_Text Timer, CurrentScore, MaxScore;
     [SerializeField] private SoundType FinishMusic;
 
     private void Awake()
@@ -21,6 +21,8 @@ public class FinishGamePopup : Popup
     {
         base.AfterShown();
         SoundController.Instance.PlayOnce(this.FinishMusic);
+        MapLuna.Timer = (int)MapLuna.Timer;
+        this.Timer.text = (MapLuna.Timer - MapLuna.Timer % 60) / 60 + ":" + MapLuna.Timer % 60;
         this.CurrentScore.text = ScoreController.currentScore + "";
         if (ScoreController.currentScore >= Data.MaxScore)
         {

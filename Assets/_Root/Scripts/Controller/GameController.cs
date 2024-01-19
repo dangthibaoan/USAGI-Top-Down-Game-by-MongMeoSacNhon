@@ -44,11 +44,6 @@ public class GameController : Singleton<GameController>
         LoadLevel();
     }
 
-    public void FinishGame()
-    {
-        PopupController.Instance.Hide<UIPopup>();
-        PopupController.Instance.Hide<GamePopup>();
-        PopupController.Instance.Show<FinishGamePopup>();
-    }
+    public void FinishGame() { }
 
 }

@@ -79,9 +79,8 @@ public class BasketController : BaseMovement
     {
         MapLuna.IsSpawnPrefab = false;
         if (ScoreController.currentScore > Data.MaxScore) Data.MaxScore = ScoreController.currentScore;
-
-        GameController.Instance.FinishGame();
-
+        PopupController.Instance.Hide<UIPopup>();
+        PopupController.Instance.Hide<GamePopup>();
         StartCoroutine(RestartLevel());
     }
 
@@ -100,5 +99,6 @@ public class BasketController : BaseMovement
 
         ConfigController.Config_PlayerData.isActiveMovement = false;
         rb.bodyType = RigidbodyType2D.Kinematic;
+        PopupController.Instance.Show<FinishGamePopup>();
     }
 }
