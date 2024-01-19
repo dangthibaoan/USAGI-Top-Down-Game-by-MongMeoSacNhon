@@ -394,7 +394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c89a51bcedd364988868962bf7c650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idText: 1
+  idStoryLine: 1
+  iDCharacter: 1
   stt: 0
 --- !u!114 &2006060251603975398
 MonoBehaviour:
@@ -408,6 +409,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698fb80f435f09e4abc6fa3f5236b89f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iDText: 1
-  indexTextDetailCurrent: 0
-  indexTextDataCurrent: 0
+  idStoryLine: 1
+  indexStoryLineTextCurrent: 0
+  indexStoryLineDataCurrent: 0

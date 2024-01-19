@@ -25,14 +25,14 @@ public class BasketController : BaseMovement
     {
         base.Start();
         TxtHP.text = "×" + MaxHP;
-        ConfigController.PlayerDataConfig.isActiveMovement = true;
+        ConfigController.Config_PlayerData.isActiveMovement = true;
         rb.bodyType = RigidbodyType2D.Dynamic;
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
-        if (!ConfigController.PlayerDataConfig.isActiveMovement) return;
+        if (!ConfigController.Config_PlayerData.isActiveMovement) return;
 
         // use 'A' or 'D' or right/left arrow to move
         float x = Input.GetAxis("Horizontal") * Time.fixedDeltaTime * speed;
@@ -80,6 +80,8 @@ public class BasketController : BaseMovement
         MapLuna.IsSpawnPrefab = false;
         if (ScoreController.currentScore > Data.MaxScore) Data.MaxScore = ScoreController.currentScore;
 
+        GameController.Instance.FinishGame();
+
         StartCoroutine(RestartLevel());
     }
 
@@ -96,9 +98,7 @@ public class BasketController : BaseMovement
         Time.timeScale = 1f; // reset time ve bt
         Time.fixedDeltaTime = Time.fixedDeltaTime * slowness; // tra lai fixdeltaTime ban dau
 
-        ConfigController.PlayerDataConfig.isActiveMovement = false;
+        ConfigController.Config_PlayerData.isActiveMovement = false;
         rb.bodyType = RigidbodyType2D.Kinematic;
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        PopupController.Instance.Show<FinishGamePopup>();
     }
 }

@@ -222,7 +222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c89a51bcedd364988868962bf7c650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idText: 2
+  idStoryLine: 2
+  iDCharacter: 2
   stt: 0
 --- !u!114 &7883326012463739632
 MonoBehaviour:
@@ -236,9 +237,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ca89483e988354087a2cfdcb7001e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iDText: 2
-  indexTextDetailCurrent: 0
-  indexTextDataCurrent: 0
+  idStoryLine: 2
+  indexStoryLineTextCurrent: 0
+  indexStoryLineDataCurrent: 0
 --- !u!1 &5027348083435927835
 GameObject:
   m_ObjectHideFlags: 0

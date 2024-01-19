@@ -3,18 +3,18 @@ using UnityEngine;
 
 public class ConfigController : MonoBehaviour
 {
-    [SerializeField] private SoundConfig sound;
-    [SerializeField] private MapConfig map;
-    [SerializeField] private TileConfig tile;
-    [SerializeField] private ItemConfig item;
-    [SerializeField] private TextConfig storyLine;
+    [SerializeField] private SoundConfig soundConfig;
+    [SerializeField] private MapConfig mapConfig;
+    [SerializeField] private TileConfig tileConfig;
+    [SerializeField] private CharacterConfig characterConfig;
+    [SerializeField] private StoryLineConfig storyLineConfig;
     [SerializeField] private Config_PlayerData config_PlayerData;
     public static SoundConfig SoundConfig;
     public static MapConfig MapConfig;
     public static TileConfig TileConfig;
-    public static ItemConfig ItemConfig;
-    public static TextConfig StoryLineConfig;
-    public static Config_PlayerData PlayerDataConfig;
+    public static CharacterConfig CharacterConfig;
+    public static StoryLineConfig StoryLineConfig;
+    public static Config_PlayerData Config_PlayerData;
 
     private void Awake()
     {
@@ -23,11 +23,11 @@ public class ConfigController : MonoBehaviour
 
     private void Init()
     {
-        SoundConfig = sound;
-        MapConfig = map;
-        TileConfig = tile;
-        ItemConfig = item;
-        StoryLineConfig = storyLine;
-        PlayerDataConfig = config_PlayerData;
+        SoundConfig = soundConfig;
+        MapConfig = mapConfig;
+        TileConfig = tileConfig;
+        CharacterConfig = characterConfig;
+        StoryLineConfig = storyLineConfig;
+        Config_PlayerData = config_PlayerData;
     }
 }

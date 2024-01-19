@@ -9,11 +9,11 @@ public class Trigger : MonoBehaviour
     protected virtual void Awake()
     {
         td_index = 0;
-        ConfigController.ItemConfig.ItemDatas.ForEach(item =>
+        ConfigController.CharacterConfig.CharacterDatas.ForEach(item =>
         {
-            if (item.Item.name == transform.parent.gameObject.name)
+            if (item.Character.name == transform.parent.gameObject.name)
             {
-                td_index = ConfigController.ItemConfig.ItemDatas.IndexOf(item);
+                td_index = ConfigController.CharacterConfig.CharacterDatas.IndexOf(item);
             }
         });
         td_txtDialog = transform.parent.gameObject.name;

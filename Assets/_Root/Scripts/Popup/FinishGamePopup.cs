@@ -36,7 +36,7 @@ public class FinishGamePopup : Popup
 
     public void BtnOKClick()
     {
-        this.Hide();
+        PopupController.Instance.HideAll();
         SceneController.Instance.LoadHomeScene();
     }
 }

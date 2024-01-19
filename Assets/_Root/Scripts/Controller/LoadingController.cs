@@ -11,15 +11,15 @@ public class LoadingController : Singleton<LoadingController>
 
     private void Start()
     {
-        ConfigController.PlayerDataConfig.status = 2;
-        ConfigController.PlayerDataConfig.PlayerPositionCurrent = ConfigController.ItemConfig.ItemDatas[0].Item.transform.position;
+        ConfigController.Config_PlayerData.status = 2;
+        ConfigController.Config_PlayerData.PlayerPositionCurrent = ConfigController.CharacterConfig.CharacterDatas[0].Character.transform.position;
 
         // usagi = transform.GetChild(0).gameObject;
         // usagi.transform.position += Vector3.right * 5;
-        ConfigController.PlayerDataConfig.isMoving = true;
+        ConfigController.Config_PlayerData.isMoving = true;
         usagi.transform.DOMoveX(5.0f, 5.0f).OnComplete(() =>
         {
-            ConfigController.PlayerDataConfig.isMoving = false;
+            ConfigController.Config_PlayerData.isMoving = false;
             Data.GetBool(Constant.MUSIC_STATE, true);
             SceneController.Instance.LoadHomeScene();
         });

@@ -13,16 +13,16 @@ public class UsagiAnimation : MonoBehaviour
     {
         if (animator == null) return;
 
-        if (ConfigController.PlayerDataConfig.isMoving)
+        if (ConfigController.Config_PlayerData.isMoving)
         {
             //Play anim walk
-            PlayAnimWalk(ConfigController.PlayerDataConfig.status);
+            PlayAnimWalk(ConfigController.Config_PlayerData.status);
         }
         else
         {
             CountDown = 0.3f;
             //Play anim idle
-            switch (ConfigController.PlayerDataConfig.status)
+            switch (ConfigController.Config_PlayerData.status)
             {
                 case 0:
                     animator.Play("Down", 0, 0);

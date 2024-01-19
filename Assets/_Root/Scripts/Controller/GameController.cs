@@ -46,7 +46,9 @@ public class GameController : Singleton<GameController>
 
     public void FinishGame()
     {
-        //PopupController.Instance.Show<WinPopup>();
+        PopupController.Instance.Hide<UIPopup>();
+        PopupController.Instance.Hide<GamePopup>();
+        PopupController.Instance.Show<FinishGamePopup>();
     }
 
 }

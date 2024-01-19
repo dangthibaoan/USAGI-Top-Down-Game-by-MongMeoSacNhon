@@ -18,8 +18,8 @@ public class Dialog : MonoBehaviour, IChangeColor
     public TMP_Text d_Txt;
     public GameObject d_GameObj;
     public DialogType d_type;
-    public IDText d_idText;
-    public int d_indexText;
+    public IDStoryLine d_idStoryLine;
+    public int d_indexStoryLineText;
 
     private void Start()
     {
@@ -31,13 +31,13 @@ public class Dialog : MonoBehaviour, IChangeColor
         Debug.Log("Click dialog " + d_Txt.text);
         if (d_type == DialogType.Talk)
         {
-            if (d_GameObj.name != ConfigController.ItemConfig.ItemDatas[0].Item.name)
+            if (d_GameObj.name != ConfigController.CharacterConfig.CharacterDatas[0].Character.name)
             {
                 DialogController.Instance.HideAllDialog();
                 DialogController.Instance.isTalking = true;
                 StoryLineController.Instance.SetStoryLine(d_GameObj.GetComponentInChildren<StoryLine>());
             }
-            StoryLineController.Instance.SetIndexLineCurrent(d_indexText);
+            StoryLineController.Instance.SetIndexLineCurrent(d_indexStoryLineText);
             StoryLineController.Instance.GetLine();
         }
         else if (d_type == DialogType.Loot)

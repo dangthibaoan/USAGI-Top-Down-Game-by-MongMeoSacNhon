@@ -13,27 +13,27 @@ public class DialogController : Singleton<DialogController>
     [SerializeField] private Transform Content;
     public bool isTalking = false, isCreateReplyDialog = false;
 
-    public void CreateDialog(int sttItem, string txtDialog, GameObject obj, IDText idText, int indexText)
+    public void CreateDialog(int sttItem, string txtDialog, GameObject gameObj, IDStoryLine idStoryLine, int indexStoryLineText)
     {
         // isCreateReplyDialog = true;
 
         var dialogInstance = Instantiate(dialogOriginal, Content);
 
-        if (obj.name == ConfigController.ItemConfig.ItemDatas[0].Item.name)
+        if (gameObj == ConfigController.CharacterConfig.CharacterDatas[0].Character)
             dialogInstance.gameObject.SetActive(true);
         else
             dialogInstance.gameObject.SetActive(!isTalking);
 
         dialogInstance.d_type = DialogType.Talk;
         dialogInstance.d_Index = Content.childCount - 1;
-        dialogInstance.d_Icon.sprite = ConfigController.ItemConfig.ItemDatas[sttItem].Icon;
+        dialogInstance.d_Icon.sprite = ConfigController.CharacterConfig.CharacterDatas[sttItem].Icon;
         dialogInstance.d_Txt.text = txtDialog;
-        dialogInstance.d_GameObj = obj;
-        dialogInstance.d_idText = idText;
-        dialogInstance.d_indexText = indexText;
-        Debug.Log("Created dialog talk number " + dialogInstance.d_Index + ": <<" + txtDialog + ">> with game object <<" + obj.name + ">>");
+        dialogInstance.d_GameObj = gameObj;
+        dialogInstance.d_idStoryLine = idStoryLine;
+        dialogInstance.d_indexStoryLineText = indexStoryLineText;
+        Debug.Log("Created dialog talk number " + dialogInstance.d_Index + ": <<" + txtDialog + ">> with game object <<" + gameObj.name + ">>");
     }
-    public void CreateDialog(int sttItem, string txtDialog, GameObject obj)
+    public void CreateDialog(int sttItem, string txtDialog, GameObject gameObj)
     {
         // isCreateReplyDialog = true;
 
@@ -43,10 +43,11 @@ public class DialogController : Singleton<DialogController>
 
         dialogInstance.d_type = DialogType.Loot;
         dialogInstance.d_Index = Content.childCount - 1;
-        dialogInstance.d_Icon.sprite = ConfigController.ItemConfig.ItemDatas[sttItem].Icon;
+        dialogInstance.d_Icon.sprite = ConfigController.CharacterConfig.CharacterDatas[sttItem].Icon;
         dialogInstance.d_Txt.text = txtDialog;
-        dialogInstance.d_GameObj = obj;
-        Debug.Log("Created dialog loot number " + dialogInstance.d_Index + ": <<" + txtDialog + ">> with game object <<" + obj.name + ">>");
+        dialogInstance.d_GameObj = gameObj;
+        dialogInstance.d_idStoryLine = IDStoryLine.nonStoryLine;
+        Debug.Log("Created dialog loot number " + dialogInstance.d_Index + ": <<" + txtDialog + ">> with game object <<" + gameObj + ">>");
     }
     public void ResetDialog()
     {

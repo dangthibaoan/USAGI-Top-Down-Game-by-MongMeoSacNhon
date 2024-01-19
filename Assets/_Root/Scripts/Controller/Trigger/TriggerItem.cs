@@ -11,14 +11,14 @@ public class TriggerItem : Trigger
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(other.gameObject.name + " trigger");
-        if (other.gameObject.name == ConfigController.ItemConfig.ItemDatas[0].Item.name)
+        if (other.gameObject.name == ConfigController.CharacterConfig.CharacterDatas[0].Character.name)
         {
             DialogController.Instance.CreateDialog(td_index, td_txtDialog, transform.parent.gameObject);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.name == ConfigController.ItemConfig.ItemDatas[0].Item.name)
+        if (other.gameObject.name == ConfigController.CharacterConfig.CharacterDatas[0].Character.name)
         {
             DialogController.Instance.DeleteDialog(td_txtDialog, transform.parent.gameObject);
         }

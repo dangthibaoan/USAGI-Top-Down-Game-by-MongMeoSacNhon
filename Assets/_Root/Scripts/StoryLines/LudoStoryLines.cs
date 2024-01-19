@@ -8,20 +8,20 @@ public class LudoStoryLines : StoryLine
 {
     private void Awake()
     {
-        iDText = IDText.Ludo;
-        GetIndexTextData(iDText);
+        idStoryLine = IDStoryLine.Story_Ludo;
+        GetIndexStoryLineData(idStoryLine);
     }
     public override void GetLine(int indexLine)
     {
-        indexTextDetailCurrent = indexLine;
+        indexStoryLineTextCurrent = indexLine;
 
         DialogController.Instance.ResetDialog();
 
-        if (indexTextDetailCurrent < 0)
+        if (indexStoryLineTextCurrent < 0)
         {
             StoryLineController.Instance.EndStoryLine();
 
-            if (indexTextDetailCurrent == -1)
+            if (indexStoryLineTextCurrent == -1)
             {
                 Data.IndexMap = 1;
                 SceneController.Instance.LoadGameScene();
@@ -30,11 +30,11 @@ public class LudoStoryLines : StoryLine
             return;
         }
 
-        var nameTalker = ConfigController.StoryLineConfig.TextDatas[indexTextDataCurrent].TextDetails[indexTextDetailCurrent].Item.name;
-        var talkText = ConfigController.StoryLineConfig.TextDatas[indexTextDataCurrent].TextDetails[indexTextDetailCurrent].txt;
-        StoryLineController.Instance.ChangeTalk(nameTalker, talkText);
+        var nameTalker = ConfigController.StoryLineConfig.StoryLineDatas[indexStoryLineDataCurrent].StoryLineTexts[indexStoryLineTextCurrent].Character;
+        var talkText = ConfigController.StoryLineConfig.StoryLineDatas[indexStoryLineDataCurrent].StoryLineTexts[indexStoryLineTextCurrent].txt;
+        StoryLineController.Instance.ChangeTalk(nameTalker.ToString(), talkText);
 
-        switch (indexTextDetailCurrent)
+        switch (indexStoryLineTextCurrent)
         {
             case 0:
                 Line_0();

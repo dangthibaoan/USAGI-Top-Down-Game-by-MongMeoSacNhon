@@ -11,6 +11,6 @@ public class HomeController : Singleton<HomeController>
         SoundController.Instance.PlayBackground(SoundType.BackgroundMusic);
         PopupController.Instance.Show<UIPopup>();
         PopupController.Instance.GetPopup<UIPopup>().BtnWASDSetActive(true, true, true, true);
-        ConfigController.PlayerDataConfig.isActiveMovement = true;
+        ConfigController.Config_PlayerData.isActiveMovement = true;
     }
 }

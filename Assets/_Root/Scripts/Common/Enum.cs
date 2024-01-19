@@ -13,9 +13,13 @@ public enum DialogType
     Talk,
     Loot
 }
-public enum IDText
+public enum IDStoryLine
 {
-    Usagi,
-    Ludo,
-    Luna
+    nonStoryLine,
+    Story_Ludo,
+    Story_Luna
+}
+public enum IDCharacter
+{
+    Usagi, Ludo, Luna
 }

@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class TriggerNPC : Trigger
 {
-    [SerializeField] private IDText idText;
+    [SerializeField] private IDStoryLine idStoryLine;
+    [SerializeField] private IDCharacter iDCharacter;
     [SerializeField] private int stt;
     protected override void Awake()
     {
@@ -14,14 +15,14 @@ public class TriggerNPC : Trigger
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(other.gameObject.name + " trigger");
-        if (other.gameObject.name == ConfigController.ItemConfig.ItemDatas[0].Item.name)
+        if (other.gameObject.name == ConfigController.CharacterConfig.CharacterDatas[0].Character.name)
         {
-            DialogController.Instance.CreateDialog(td_index, td_txtDialog, transform.parent.gameObject, idText, stt);
+            DialogController.Instance.CreateDialog(td_index, td_txtDialog, transform.parent.gameObject, idStoryLine, stt);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.name == ConfigController.ItemConfig.ItemDatas[0].Item.name)
+        if (other.gameObject.name == ConfigController.CharacterConfig.CharacterDatas[0].Character.name)
         {
             DialogController.Instance.DeleteDialog(td_txtDialog, transform.parent.gameObject);
         }

@@ -61,7 +61,7 @@ public class StoryLineController : Singleton<StoryLineController>
     {
         PopupController.Instance.Hide<UIPopup>();
 
-        ConfigController.PlayerDataConfig.isActiveMovement = false;
+        ConfigController.Config_PlayerData.isActiveMovement = false;
 
         DialogController.Instance.isTalking = true;
         DialogController.Instance.isCreateReplyDialog = false;
@@ -70,7 +70,7 @@ public class StoryLineController : Singleton<StoryLineController>
         TalkBox.gameObject.SetActive(true);
         TalkBox.DOMove(TalkBoxPositionOrigin, 0.5f);
 
-        int next = ConfigController.StoryLineConfig.TextDatas[StoryLineCurrent.indexTextDataCurrent].TextDetails[indexTextDetailCurrent].sttNext;
+        int next = ConfigController.StoryLineConfig.StoryLineDatas[StoryLineCurrent.indexStoryLineDataCurrent].StoryLineTexts[indexTextDetailCurrent].nextLineNumber;
         indexTextDetailCurrent = next;
 
         if (next < 0) return;
@@ -79,12 +79,12 @@ public class StoryLineController : Singleton<StoryLineController>
     }
     private void CheckForCreateDialogReply()
     {
-        ConfigController.StoryLineConfig.TextDatas[StoryLineCurrent.indexTextDataCurrent].TextDetails.ToList().ForEach(texts =>
+        ConfigController.StoryLineConfig.StoryLineDatas[StoryLineCurrent.indexStoryLineDataCurrent].StoryLineTexts.ToList().ForEach(texts =>
         {
-            if (texts.stt == indexTextDetailCurrent && texts.Item == ConfigController.ItemConfig.ItemDatas[0].Item)
+            if (texts.lineNumber == indexTextDetailCurrent && texts.Character == ConfigController.CharacterConfig.CharacterDatas[0].idCharacter)
             {
                 DialogController.Instance.isCreateReplyDialog = true;
-                DialogController.Instance.CreateDialog(0, texts.txt, texts.Item, StoryLineCurrent.iDText, texts.sttNext);
+                DialogController.Instance.CreateDialog(0, texts.txt, ConfigController.CharacterConfig.CharacterDatas[0].Character, StoryLineCurrent.idStoryLine, texts.nextLineNumber);
             }
         });
     }
@@ -95,7 +95,7 @@ public class StoryLineController : Singleton<StoryLineController>
     }
     public void EndStoryLine()
     {
-        ConfigController.PlayerDataConfig.isActiveMovement = true;
+        ConfigController.Config_PlayerData.isActiveMovement = true;
         ResetTalkArea();
         PopupController.Instance.Show<UIPopup>();
         DialogController.Instance.ShowAllDialog();

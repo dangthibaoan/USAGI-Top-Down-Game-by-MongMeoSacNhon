@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class StoryLine : MonoBehaviour
 {
-    public IDText iDText;
-    public int indexTextDetailCurrent, indexTextDataCurrent;
-    protected void GetIndexTextData(IDText iDText)
+    public IDStoryLine idStoryLine;
+    public int indexStoryLineTextCurrent, indexStoryLineDataCurrent;
+    protected void GetIndexStoryLineData(IDStoryLine idStoryLine)
     {
-        ConfigController.StoryLineConfig.TextDatas.ToList().ForEach(_textData =>
+        ConfigController.StoryLineConfig.StoryLineDatas.ToList().ForEach(_data =>
         {
-            if (_textData.idText == iDText)
+            if (_data.idStoryLine == idStoryLine)
             {
-                indexTextDataCurrent = ConfigController.StoryLineConfig.TextDatas.IndexOf(_textData);
+                indexStoryLineDataCurrent = ConfigController.StoryLineConfig.StoryLineDatas.IndexOf(_data);
             }
         });
     }
