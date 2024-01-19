@@ -30,7 +30,7 @@ public class LudoStoryLines : StoryLine
             return;
         }
 
-        var nameTalker = ConfigController.StoryLineConfig.StoryLineDatas[indexStoryLineDataCurrent].StoryLineTexts[indexStoryLineTextCurrent].Character;
+        var nameTalker = ConfigController.StoryLineConfig.StoryLineDatas[indexStoryLineDataCurrent].StoryLineTexts[indexStoryLineTextCurrent].idCharacter;
         var talkText = ConfigController.StoryLineConfig.StoryLineDatas[indexStoryLineDataCurrent].StoryLineTexts[indexStoryLineTextCurrent].txt;
         StoryLineController.Instance.ChangeTalk(nameTalker.ToString(), talkText);
 

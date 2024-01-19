@@ -17,7 +17,7 @@ public class StoryLineData
 public class StoryLineText
 {
     public int lineNumber;
-    public IDCharacter Character;
+    public IDCharacter idCharacter;
     public string txt;
     public int nextLineNumber;
 }

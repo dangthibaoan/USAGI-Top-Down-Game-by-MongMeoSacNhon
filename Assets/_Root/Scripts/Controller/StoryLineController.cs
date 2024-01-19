@@ -81,7 +81,7 @@ public class StoryLineController : Singleton<StoryLineController>
     {
         ConfigController.StoryLineConfig.StoryLineDatas[StoryLineCurrent.indexStoryLineDataCurrent].StoryLineTexts.ToList().ForEach(texts =>
         {
-            if (texts.lineNumber == indexTextDetailCurrent && texts.Character == ConfigController.CharacterConfig.CharacterDatas[0].idCharacter)
+            if (texts.lineNumber == indexTextDetailCurrent && texts.idCharacter == ConfigController.CharacterConfig.CharacterDatas[0].idCharacter)
             {
                 DialogController.Instance.isCreateReplyDialog = true;
                 DialogController.Instance.CreateDialog(0, texts.txt, ConfigController.CharacterConfig.CharacterDatas[0].Character, StoryLineCurrent.idStoryLine, texts.nextLineNumber);
