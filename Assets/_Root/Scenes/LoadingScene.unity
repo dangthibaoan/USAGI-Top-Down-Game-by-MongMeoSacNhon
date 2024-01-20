@@ -2042,6 +2042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundConfig: {fileID: 11400000, guid: 887c6476dca1bdb4ca31119183c23d9e, type: 2}
   miniGameConfig: {fileID: 11400000, guid: 6194f5738e869294f9c01b7051ccb46f, type: 2}
+  mapConfig: {fileID: 11400000, guid: 3e95c82a54b89aa49b34b6fb5cb01ee1, type: 2}
   tileConfig: {fileID: 11400000, guid: a1ff3317233f9254783686d085e7245a, type: 2}
   characterConfig: {fileID: 11400000, guid: beb2dce29ecbf2143a955fa29344a981, type: 2}
   storyLineConfig: {fileID: 11400000, guid: cf7887bb5abe5654f93c4e309f292fd2, type: 2}

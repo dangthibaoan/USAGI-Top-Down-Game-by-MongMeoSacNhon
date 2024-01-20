@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be4773aa69a19234bbf80d4f4441446b, type: 3}
   m_Name: MapConfig
   m_EditorClassIdentifier: 
-  ListMaps: []
+  ListMaps:
+  - {fileID: 3560148907395277491, guid: fc3710f12b195d84fa0ec714f2891d11, type: 3}

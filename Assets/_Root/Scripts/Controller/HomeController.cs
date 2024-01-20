@@ -26,7 +26,7 @@ public class HomeController : Singleton<HomeController>
         }
 
         var map = GetMap(Data.IndexMap);
-        MapCurrent = Instantiate(map, transform);
+        MapCurrent = Instantiate(map);
         SoundController.Instance.PlayBackground(MapCurrent.Bgm);
     }
     public Map GetMap(int index)
