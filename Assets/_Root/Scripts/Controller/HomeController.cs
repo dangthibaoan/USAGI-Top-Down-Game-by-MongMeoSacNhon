@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class HomeController : Singleton<HomeController>
 {
-    public MiniGame MapCurrent;
+    public Map MapCurrent;
 
     protected override void Awake()
     {
@@ -12,7 +12,7 @@ public class HomeController : Singleton<HomeController>
 
     void Start()
     {
-        SoundController.Instance.PlayBackground(SoundType.BackgroundMusic);
+        LoadMap();
         PopupController.Instance.Show<UIPopup>();
         PopupController.Instance.GetPopup<UIPopup>().BtnWASDSetActive(true, true, true, true);
         ConfigController.Config_PlayerData.isActiveMovement = true;
@@ -27,11 +27,11 @@ public class HomeController : Singleton<HomeController>
 
         var map = GetMap(Data.IndexMap);
         MapCurrent = Instantiate(map, transform);
-        //Data.SetInt(Constant.MAX_SCORE, ConfigController.Level.MaxScoreLevel(Data.IndexMap));
+        SoundController.Instance.PlayBackground(MapCurrent.Bgm);
     }
-    public MiniGame GetMap(int index)
+    public Map GetMap(int index)
     {
-        return ConfigController.MiniGameConfig.ListMiniGames[index % ConfigController.MiniGameConfig.ListMiniGames.Count];
+        return ConfigController.MapConfig.ListMaps[index % ConfigController.MapConfig.ListMaps.Count];
     }
 
     public void NextLevel()

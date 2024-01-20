@@ -14,7 +14,6 @@ public class GameController : Singleton<GameController>
         DialogController.Instance.ResetDialog();
         LoadLevel();
         PopupController.Instance.Show<GamePopup>();
-        SoundController.Instance.PlayBackground(SoundType.BackgroundMusicOnGame);
     }
 
     public void LoadLevel()
@@ -26,7 +25,7 @@ public class GameController : Singleton<GameController>
 
         var miniGame = GetMiniGame(Data.IndexMiniGame);
         MiniGameCurrent = Instantiate(miniGame, transform);
-        //Data.SetInt(Constant.MAX_SCORE, ConfigController.Level.MaxScoreLevel(Data.IndexMap));
+        SoundController.Instance.PlayBackground(MiniGameCurrent.Bgm);
     }
     public MiniGame GetMiniGame(int index)
     {
