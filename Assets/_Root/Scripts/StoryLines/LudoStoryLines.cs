@@ -23,7 +23,7 @@ public class LudoStoryLines : StoryLine
 
             if (indexStoryLineTextCurrent == -1)
             {
-                Data.IndexMap = 1;
+                Data.IndexMiniGame = 1;
                 SceneController.Instance.LoadGameScene();
             }
 

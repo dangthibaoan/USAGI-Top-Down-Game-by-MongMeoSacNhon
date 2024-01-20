@@ -22,7 +22,7 @@ public class LunaStoryLines : StoryLine
 
             if (indexStoryLineTextCurrent == -1)
             {
-                Data.IndexMap = 0;
+                Data.IndexMiniGame = 0;
                 SceneController.Instance.LoadGameScene();
             }
 

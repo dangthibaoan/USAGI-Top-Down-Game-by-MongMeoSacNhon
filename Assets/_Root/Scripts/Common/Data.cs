@@ -11,6 +11,12 @@ public static class Data
     public static string GetString(string key, string defaultValue) => PlayerPrefs.GetString(key, defaultValue);
     public static void SetString(string id, string value) => PlayerPrefs.SetString(id, value);
 
+    public static int IndexMiniGame
+    {
+        get => GetInt(Constant.INDEX_MAP, 0);
+        set => SetInt(Constant.INDEX_MAP, value);
+    }
+
     public static int IndexMap
     {
         get => GetInt(Constant.INDEX_MAP, 0);

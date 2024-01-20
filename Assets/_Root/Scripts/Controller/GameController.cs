@@ -24,7 +24,7 @@ public class GameController : Singleton<GameController>
             Destroy(MiniGameCurrent.gameObject);
         }
 
-        var miniGame = GetMiniGame(Data.IndexMap);
+        var miniGame = GetMiniGame(Data.IndexMiniGame);
         MiniGameCurrent = Instantiate(miniGame, transform);
         //Data.SetInt(Constant.MAX_SCORE, ConfigController.Level.MaxScoreLevel(Data.IndexMap));
     }
@@ -35,7 +35,7 @@ public class GameController : Singleton<GameController>
 
     public void NextLevel()
     {
-        Data.IndexMap++;
+        Data.IndexMiniGame++;
         LoadLevel();
     }
 
