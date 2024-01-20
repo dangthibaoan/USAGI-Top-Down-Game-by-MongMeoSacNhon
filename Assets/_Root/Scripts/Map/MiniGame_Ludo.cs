@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapLudo : Map
+public class MiniGame_Ludo : MiniGame
 {
 
 }

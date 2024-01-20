@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 4569676283972831487}
   - component: {fileID: 3153224314380583173}
   m_Layer: 5
-  m_Name: 02_MapLudo
+  m_Name: 02_LudoGame_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,6 +185,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 9049088029339029575}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f15df41882777784f898d282ddfb2f12, type: 3}
+  m_Script: {fileID: 11500000, guid: 524bed8073b2aee438f6a95ac697f07c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

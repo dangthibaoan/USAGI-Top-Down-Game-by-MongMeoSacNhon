@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GameController : Singleton<GameController>
 {
-    public Map MapCurrent;
+    public MiniGame MiniGameCurrent;
 
     protected override void Awake()
     {
@@ -19,18 +19,18 @@ public class GameController : Singleton<GameController>
 
     public void LoadLevel()
     {
-        if (MapCurrent != null)
+        if (MiniGameCurrent != null)
         {
-            Destroy(MapCurrent.gameObject);
+            Destroy(MiniGameCurrent.gameObject);
         }
 
-        var map = GetMap(Data.IndexMap);
-        MapCurrent = Instantiate(map, transform);
+        var miniGame = GetMiniGame(Data.IndexMap);
+        MiniGameCurrent = Instantiate(miniGame, transform);
         //Data.SetInt(Constant.MAX_SCORE, ConfigController.Level.MaxScoreLevel(Data.IndexMap));
     }
-    public Map GetMap(int index)
+    public MiniGame GetMiniGame(int index)
     {
-        return ConfigController.MapConfig.Maps[index % ConfigController.MapConfig.Maps.Count];
+        return ConfigController.MiniGameConfig.ListMiniGames[index % ConfigController.MiniGameConfig.ListMiniGames.Count];
     }
 
     public void NextLevel()

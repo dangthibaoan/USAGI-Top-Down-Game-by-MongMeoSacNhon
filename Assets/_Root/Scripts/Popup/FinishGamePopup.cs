@@ -21,8 +21,8 @@ public class FinishGamePopup : Popup
     {
         base.AfterShown();
         SoundController.Instance.PlayOnce(this.FinishMusic);
-        MapLuna.Timer = (int)MapLuna.Timer;
-        this.Timer.text = (MapLuna.Timer - MapLuna.Timer % 60) / 60 + ":" + MapLuna.Timer % 60;
+        MiniGame_Luna.Timer = (int)MiniGame_Luna.Timer;
+        this.Timer.text = (MiniGame_Luna.Timer - MiniGame_Luna.Timer % 60) / 60 + ":" + MiniGame_Luna.Timer % 60;
         this.CurrentScore.text = ScoreController.currentScore + "";
         if (ScoreController.currentScore >= Data.MaxScore)
         {

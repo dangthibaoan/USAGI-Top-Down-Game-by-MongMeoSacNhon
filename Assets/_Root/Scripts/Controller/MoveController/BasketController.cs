@@ -77,7 +77,7 @@ public class BasketController : BaseMovement
 
     public void EndGame()
     {
-        MapLuna.IsSpawnPrefab = false;
+        MiniGame_Luna.IsSpawnPrefab = false;
         if (ScoreController.currentScore > Data.MaxScore) Data.MaxScore = ScoreController.currentScore;
         PopupController.Instance.Hide<UIPopup>();
         PopupController.Instance.Hide<GamePopup>();

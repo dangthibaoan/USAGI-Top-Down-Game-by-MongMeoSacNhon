@@ -5,7 +5,7 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
-public class MapLuna : Map
+public class MiniGame_Luna : MiniGame
 {
     [Header("Map Setting")]
     [SerializeField] private Config_MapLunaData MapLunaData;

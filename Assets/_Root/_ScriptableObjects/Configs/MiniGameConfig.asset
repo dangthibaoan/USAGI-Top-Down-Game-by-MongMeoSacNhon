@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c16f3e2b726049e4aa4d3c933c28024a, type: 3}
-  m_Name: MapConfig
+  m_Script: {fileID: 11500000, guid: 1f692de81f79d5148a3c3ac928c7892f, type: 3}
+  m_Name: MiniGameConfig
   m_EditorClassIdentifier: 
-  Maps:
+  ListMiniGames:
   - {fileID: 5674651064456400787, guid: 1e9e5d36c65c5514e90bbfb8818b73a9, type: 3}
   - {fileID: 3153224314380583173, guid: b5cedbd3791b678408cfb9db8d706dbc, type: 3}
