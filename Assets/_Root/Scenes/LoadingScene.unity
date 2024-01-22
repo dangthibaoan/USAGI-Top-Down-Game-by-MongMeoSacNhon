@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 102053211}
   - component: {fileID: 102053210}
+  - component: {fileID: 102053213}
   - component: {fileID: 102053212}
   m_Layer: 5
   m_Name: StoryLineController
@@ -174,7 +175,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 779631220}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -190,6 +192,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17cfa2d80fcd5b04b9d535cb6ee2693d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &102053213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102053209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d03ee4faf50b6ae41b2dfef17e47826e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogOriginal: {fileID: 6526308231094381897, guid: db9e0f460ed33da4f82d51c5c8bdd341,
+    type: 3}
+  Content: {fileID: 1399616632}
+  isTalking: 0
+  isCreateReplyDialog: 0
 --- !u!1 &144264466
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +262,7 @@ Transform:
   - {fileID: 1936876975}
   - {fileID: 1756364413}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &144264469
 MonoBehaviour:
@@ -477,7 +496,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -711,7 +730,6 @@ GameObject:
   - component: {fileID: 779631222}
   - component: {fileID: 779631221}
   - component: {fileID: 779631225}
-  - component: {fileID: 779631224}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -733,8 +751,8 @@ RectTransform:
   m_Children:
   - {fileID: 1936792257}
   - {fileID: 1787098004}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 102053211}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -802,18 +820,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &779631224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 779631219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17cfa2d80fcd5b04b9d535cb6ee2693d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &779631225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -993,70 +999,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1072766997
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1072767000}
-  - component: {fileID: 1072767002}
-  - component: {fileID: 1072767001}
-  m_Layer: 5
-  m_Name: DialogController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1072767000
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1072766997}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1072767001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1072766997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17cfa2d80fcd5b04b9d535cb6ee2693d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1072767002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1072766997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d03ee4faf50b6ae41b2dfef17e47826e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogOriginal: {fileID: 6526308231094381897, guid: db9e0f460ed33da4f82d51c5c8bdd341,
-    type: 3}
-  Content: {fileID: 1399616632}
-  isTalking: 0
-  isCreateReplyDialog: 0
 --- !u!1 &1100852699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,7 +1125,7 @@ Transform:
   - {fileID: 402300516}
   - {fileID: 1548359771}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1128499907
 MonoBehaviour:
@@ -2060,7 +2004,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1931752703
 GameObject:
