@@ -17,8 +17,16 @@ public class StoryLineController : Singleton<StoryLineController>
     [SerializeField] private Vector3 TalkCursorPositionOrigin, TalkBoxPositionOrigin;
 
     [Header("Story Line Current")]
+    [SerializeField] private StoryLineConfig storyLineConfig;
+    public static StoryLineConfig StoryLineConfig;
     [SerializeField] private int indexTextDetailCurrent;
     [SerializeField] private StoryLine StoryLineCurrent;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        StoryLineConfig = storyLineConfig;
+    }
 
     private void Start()
     {
@@ -70,7 +78,7 @@ public class StoryLineController : Singleton<StoryLineController>
         TalkBox.gameObject.SetActive(true);
         TalkBox.DOMove(TalkBoxPositionOrigin, 0.5f);
 
-        int next = ConfigController.StoryLineConfig.StoryLineDatas[StoryLineCurrent.indexStoryLineDataCurrent].StoryLineTexts[indexTextDetailCurrent].nextLineNumber;
+        int next = StoryLineConfig.StoryLineDatas[StoryLineCurrent.indexStoryLineDataCurrent].StoryLineTexts[indexTextDetailCurrent].nextLineNumber;
         indexTextDetailCurrent = next;
 
         if (next < 0) return;
@@ -79,7 +87,7 @@ public class StoryLineController : Singleton<StoryLineController>
     }
     private void CheckForCreateDialogReply()
     {
-        ConfigController.StoryLineConfig.StoryLineDatas[StoryLineCurrent.indexStoryLineDataCurrent].StoryLineTexts.ToList().ForEach(texts =>
+        StoryLineConfig.StoryLineDatas[StoryLineCurrent.indexStoryLineDataCurrent].StoryLineTexts.ToList().ForEach(texts =>
         {
             if (texts.lineNumber == indexTextDetailCurrent && texts.idCharacter == ConfigController.CharacterConfig.CharacterDatas[0].idCharacter)
             {

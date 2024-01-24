@@ -392,6 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MapCurrent: {fileID: 4198789788795169895}
+  mapConfig: {fileID: 11400000, guid: 3e95c82a54b89aa49b34b6fb5cb01ee1, type: 2}
 --- !u!114 &1188409948
 MonoBehaviour:
   m_ObjectHideFlags: 0

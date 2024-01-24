@@ -9,11 +9,11 @@ public class StoryLine : MonoBehaviour
     public int indexStoryLineTextCurrent, indexStoryLineDataCurrent;
     protected void GetIndexStoryLineData(IDStoryLine idStoryLine)
     {
-        ConfigController.StoryLineConfig.StoryLineDatas.ToList().ForEach(_data =>
+        StoryLineController.StoryLineConfig.StoryLineDatas.ToList().ForEach(_data =>
         {
             if (_data.idStoryLine == idStoryLine)
             {
-                indexStoryLineDataCurrent = ConfigController.StoryLineConfig.StoryLineDatas.IndexOf(_data);
+                indexStoryLineDataCurrent = StoryLineController.StoryLineConfig.StoryLineDatas.IndexOf(_data);
             }
         });
     }

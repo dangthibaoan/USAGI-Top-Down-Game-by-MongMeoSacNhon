@@ -3,11 +3,7 @@ using UnityEngine.UI;
 public class GameController : Singleton<GameController>
 {
     public MiniGame MiniGameCurrent;
-
-    protected override void Awake()
-    {
-        base.Awake();
-    }
+    [SerializeField] private MiniGameConfig MiniGameConfig;
 
     private void Start()
     {
@@ -29,7 +25,7 @@ public class GameController : Singleton<GameController>
     }
     public MiniGame GetMiniGame(int index)
     {
-        return ConfigController.MiniGameConfig.ListMiniGames[index % ConfigController.MiniGameConfig.ListMiniGames.Count];
+        return MiniGameConfig.ListMiniGames[index % MiniGameConfig.ListMiniGames.Count];
     }
 
     public void NextLevel()

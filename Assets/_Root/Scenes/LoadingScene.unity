@@ -162,6 +162,7 @@ MonoBehaviour:
   TalkCursor: {fileID: 1979940708}
   TalkCursorPositionOrigin: {x: 0, y: 0, z: 0}
   TalkBoxPositionOrigin: {x: 0, y: 0, z: 0}
+  storyLineConfig: {fileID: 11400000, guid: cf7887bb5abe5654f93c4e309f292fd2, type: 2}
   indexTextDetailCurrent: 0
   StoryLineCurrent: {fileID: 0}
 --- !u!4 &102053211
@@ -1989,7 +1990,6 @@ MonoBehaviour:
   mapConfig: {fileID: 11400000, guid: 3e95c82a54b89aa49b34b6fb5cb01ee1, type: 2}
   tileConfig: {fileID: 11400000, guid: a1ff3317233f9254783686d085e7245a, type: 2}
   characterConfig: {fileID: 11400000, guid: beb2dce29ecbf2143a955fa29344a981, type: 2}
-  storyLineConfig: {fileID: 11400000, guid: cf7887bb5abe5654f93c4e309f292fd2, type: 2}
   config_PlayerData: {fileID: 11400000, guid: 963b7825df6a62d4da291012487ef501, type: 2}
 --- !u!4 &1788655534
 Transform:

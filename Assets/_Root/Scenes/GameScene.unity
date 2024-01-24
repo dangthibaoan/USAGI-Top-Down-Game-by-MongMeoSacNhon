@@ -307,7 +307,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88d2373bc4d5745478a5e43806d0287a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapCurrent: {fileID: 0}
+  MiniGameCurrent: {fileID: 0}
+  miniGameConfig: {fileID: 11400000, guid: 6194f5738e869294f9c01b7051ccb46f, type: 2}
 --- !u!114 &1099328703
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,11 +4,7 @@ using UnityEngine.UI;
 public class HomeController : Singleton<HomeController>
 {
     public Map MapCurrent;
-
-    protected override void Awake()
-    {
-        base.Awake();
-    }
+    [SerializeField] private MapConfig MapConfig;
 
     void Start()
     {
@@ -31,7 +27,7 @@ public class HomeController : Singleton<HomeController>
     }
     public Map GetMap(int index)
     {
-        return ConfigController.MapConfig.ListMaps[index % ConfigController.MapConfig.ListMaps.Count];
+        return MapConfig.ListMaps[index % MapConfig.ListMaps.Count];
     }
 
     public void NextLevel()
