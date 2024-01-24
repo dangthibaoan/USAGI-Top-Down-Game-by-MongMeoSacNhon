@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class HomeController : Singleton<HomeController>
 {
     public Map MapCurrent;
-    [SerializeField] private MapConfig MapConfig;
 
     void Start()
     {
@@ -27,7 +26,7 @@ public class HomeController : Singleton<HomeController>
     }
     public Map GetMap(int index)
     {
-        return MapConfig.ListMaps[index % MapConfig.ListMaps.Count];
+        return ConfigController.MapConfig.ListMaps[index % ConfigController.MapConfig.ListMaps.Count];
     }
 
     public void NextLevel()
