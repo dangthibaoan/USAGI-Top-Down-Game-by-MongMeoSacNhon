@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 650926136273339001}
   - component: {fileID: 116657761063157378}
   - component: {fileID: 1073636218905607556}
-  - component: {fileID: 7883326012463739632}
+  - component: {fileID: 2640618705896996328}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -222,10 +222,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c89a51bcedd364988868962bf7c650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trigger_type: 2
   idStoryLine: 2
-  iDCharacter: 2
-  stt: 0
---- !u!114 &7883326012463739632
+  indexStartStoryLine: 0
+  isDialogExist: 0
+--- !u!114 &2640618705896996328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

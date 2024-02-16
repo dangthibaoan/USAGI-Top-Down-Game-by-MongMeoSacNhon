@@ -16,57 +16,57 @@ MonoBehaviour:
   - idStoryLine: 1
     StoryLineTexts:
     - lineNumber: 0
-      Character: 1
+      idCharacter: 1
       txt: "\u1EA4y ch\xE0o b\u1EA1n hi\u1EC1n!"
       nextLineNumber: 1
     - lineNumber: 1
-      Character: 0
+      idCharacter: 0
       txt: "Ch\xE0o Ludo!"
       nextLineNumber: 2
     - lineNumber: 2
-      Character: 1
+      idCharacter: 1
       txt: "H\xF4m n\xE0o r\u1EA3nh t\u1EE5i m\xECnh \u0111i ch\u01A1i nh\xE1!"
       nextLineNumber: 3
     - lineNumber: 3
-      Character: 0
+      idCharacter: 0
       txt: "Oke lu\xF4n b\u1EA1n hi\u1EC1n!"
       nextLineNumber: -2
   - idStoryLine: 2
     StoryLineTexts:
     - lineNumber: 0
-      Character: 2
+      idCharacter: 2
       txt: "Ch\xE0o c\u01B0ng!"
       nextLineNumber: 1
     - lineNumber: 1
-      Character: 0
+      idCharacter: 0
       txt: "Ch\xE0o ch\u1ECB Luna \u1EA1!"
       nextLineNumber: 2
     - lineNumber: 2
-      Character: 2
+      idCharacter: 2
       txt: "H\xF4m nay c\xF3 r\u1EA3nh \u0111i h\u1EE9ng hoa qu\u1EA3 v\u1EDBi ch\u1ECB
         kh\xF4ng?"
       nextLineNumber: 3
     - lineNumber: 3
-      Character: 2
+      idCharacter: 2
       txt: "Ch\u1ECB mang s\u1EB3n gi\u1ECF r\u1ED3i n\xE0y!"
       nextLineNumber: 4
     - lineNumber: 4
-      Character: 0
+      idCharacter: 0
       txt: "\u0110\u01B0\u1EE3c lu\xF4n ch\u1ECB!"
       nextLineNumber: 6
     - lineNumber: 4
-      Character: 0
+      idCharacter: 0
       txt: "H\xF4m nay em b\u1EADn m\u1EA5t r\u1ED3i!"
       nextLineNumber: 7
     - lineNumber: 6
-      Character: 2
+      idCharacter: 2
       txt: "Xu\u1EA5t ph\xE1t th\xF4i!"
       nextLineNumber: -1
     - lineNumber: 7
-      Character: 2
+      idCharacter: 2
       txt: "V\u1EADy \u0111\u1EC3 l\u1EA7n sau nh\xE9!"
       nextLineNumber: 8
     - lineNumber: 8
-      Character: 0
+      idCharacter: 0
       txt: "V\xE2ng \u1EA1!"
       nextLineNumber: -2

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6526308231094381897}
   - component: {fileID: 1632943353644880911}
   m_Layer: 5
-  m_Name: Dialog
+  m_Name: Dialog_StoryLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,8 +99,8 @@ MonoBehaviour:
   d_Txt: {fileID: 4441252445898057658}
   d_GameObj: {fileID: 0}
   d_type: 0
-  d_idText: 0
-  d_indexText: 0
+  d_idStoryLine: 0
+  d_indexStoryLineText: 0
 --- !u!114 &1632943353644880911
 MonoBehaviour:
   m_ObjectHideFlags: 0

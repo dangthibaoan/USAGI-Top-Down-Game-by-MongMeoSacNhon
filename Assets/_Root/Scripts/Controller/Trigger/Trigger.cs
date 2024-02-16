@@ -4,22 +4,15 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour
 {
-    protected int td_index;
-    protected string td_txtDialog;
+    protected int trigger_index;
+    protected string trigger_text;
+    public TriggerType trigger_type;
     protected virtual void Awake()
     {
-        td_index = 0;
-        ConfigController.CharacterConfig.CharacterDatas.ForEach(item =>
-        {
-            if (item.Character.name == transform.parent.gameObject.name)
-            {
-                td_index = ConfigController.CharacterConfig.CharacterDatas.IndexOf(item);
-            }
-        });
-        td_txtDialog = transform.parent.gameObject.name;
+
     }
-    public void ChangeTextDialog(string txtDialog)
+    public void ChangeTextDialog(string triggerText)
     {
-        td_txtDialog = txtDialog;
+        trigger_text = triggerText;
     }
 }

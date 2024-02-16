@@ -8,8 +8,15 @@ public enum SoundType
     Walk,
     TalkClick
 }
+public enum TriggerType
+{
+    NonType,
+    Player,
+    NonPlayer
+}
 public enum DialogType
 {
+    nonDialogType,
     Talk,
     Loot
 }

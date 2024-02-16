@@ -4,23 +4,35 @@ using UnityEngine;
 
 public class TriggerItem : Trigger
 {
+    private bool isDialogExist;
     protected override void Awake()
     {
         base.Awake();
+        trigger_text = gameObject.transform.parent.name;
+        trigger_type = TriggerType.NonPlayer;
+        isDialogExist = false;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(other.gameObject.name + " trigger");
-        if (other.gameObject.name == ConfigController.CharacterConfig.CharacterDatas[0].Character.name)
+        if (other.TryGetComponent<Trigger>(out Trigger triggerOther))
         {
-            DialogController.Instance.CreateDialog(td_index, td_txtDialog, transform.parent.gameObject);
+            if (triggerOther.trigger_type == TriggerType.Player && !isDialogExist)
+            {
+                isDialogExist = true;
+                DialogController.Instance.CreateDialog(trigger_index, trigger_text, transform.parent.gameObject);
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.name == ConfigController.CharacterConfig.CharacterDatas[0].Character.name)
+        if (other.gameObject.TryGetComponent<Trigger>(out Trigger triggerOther))
         {
-            DialogController.Instance.DeleteDialog(td_txtDialog, transform.parent.gameObject);
+            if (triggerOther.trigger_type == TriggerType.Player && isDialogExist)
+            {
+                isDialogExist = false;
+                DialogController.Instance.DeleteDialog(trigger_text, transform.parent.gameObject);
+            }
         }
     }
 }
