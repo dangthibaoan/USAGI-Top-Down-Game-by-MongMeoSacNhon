@@ -1,20 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FinishGamePopup : Popup
 {
-    [SerializeField] private GameObject ImageCongrats;
-    [SerializeField] private GameObject ImageNewRecord;
+    [SerializeField] private Image ImageCongrats;
+    [SerializeField] private Image ImageNewRecord;
     [SerializeField] private TMP_Text Timer, CurrentScore, MaxScore;
     [SerializeField] private SoundType FinishMusic;
 
     private void Awake()
     {
-        this.ImageNewRecord.SetActive(false);
-        this.ImageCongrats.SetActive(true);
+        this.ImageNewRecord.gameObject.SetActive(false);
+        this.ImageCongrats.gameObject.SetActive(true);
     }
 
     protected override void AfterShown()
@@ -27,11 +27,11 @@ public class FinishGamePopup : Popup
         if (ScoreController.currentScore >= Data.MaxScore)
         {
             Data.MaxScore = ScoreController.currentScore;
-            this.ImageNewRecord.SetActive(true);
+            this.ImageNewRecord.gameObject.SetActive(true);
         }
         else
         {
-            this.ImageNewRecord.SetActive(false);
+            this.ImageNewRecord.gameObject.SetActive(false);
         }
         this.MaxScore.text = Data.MaxScore + "";
     }
