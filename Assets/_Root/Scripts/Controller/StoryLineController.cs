@@ -9,8 +9,6 @@ using DG.Tweening;
 public class StoryLineController : Singleton<StoryLineController>
 {
     [Header("UI Story Line")]
-    [SerializeField] private Transform ClickArea;
-    [SerializeField] private Transform TalkArea;
     [SerializeField] private Transform TalkBox;
     [SerializeField] private TMP_Text NameTalker, TalkText;
     [SerializeField] private Image TalkCursor;
@@ -74,7 +72,6 @@ public class StoryLineController : Singleton<StoryLineController>
         DialogController.Instance.isTalking = true;
         DialogController.Instance.isCreateReplyDialog = false;
 
-        TalkArea.gameObject.SetActive(true);
         TalkBox.gameObject.SetActive(true);
         TalkBox.DOMove(TalkBoxPositionOrigin, 0.5f);
 
@@ -112,7 +109,7 @@ public class StoryLineController : Singleton<StoryLineController>
     {
         DialogController.Instance.isTalking = false;
         DialogController.Instance.isCreateReplyDialog = false;
-        TalkArea.gameObject.SetActive(false);
+        TalkBox.gameObject.SetActive(false);
         TalkText.text = "";
         ShowTalkCursor(false);
     }
