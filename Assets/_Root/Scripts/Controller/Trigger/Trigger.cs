@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Trigger : MonoBehaviour
@@ -8,7 +6,7 @@ public class Trigger : MonoBehaviour
     protected string trigger_text;
     public TriggerType trigger_type;
     [SerializeField] protected bool isDialogExist;
-    protected virtual void Awake()
+    protected void Awake()
     {
         if (trigger_type == TriggerType.Player) return;
 
@@ -23,7 +21,7 @@ public class Trigger : MonoBehaviour
             if (triggerOther.trigger_type == TriggerType.Player && !isDialogExist)
             {
                 isDialogExist = true;
-                DialogController.Instance.CreateDialogInteract(trigger_index, trigger_text, transform.parent.gameObject);
+                DialogController.Instance.CreateDialogInteract(0, DialogType.nonDialogType, trigger_text, transform.parent.gameObject);
             }
         }
     }

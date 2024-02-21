@@ -10,7 +10,7 @@ public class Dialog : MonoBehaviour, IChangeColor
     protected Color colorOrigin;
 
     [Header("Dialog Data")]
-    public int d_Index;
+    public int d_code;// code = 0: dialog interact, code != 0: dialog storyline
     public Image d_Icon;
     public TMP_Text d_Txt;
     public GameObject d_GameObj;
@@ -25,7 +25,7 @@ public class Dialog : MonoBehaviour, IChangeColor
     {
         Debug.Log("Click dialog " + d_Txt.text);
 
-        d_GameObj.GetComponentInChildren<IAfterClickDialog>().AfterClickDialog();
+        d_GameObj.GetComponentInChildren<IAfterClickDialog>().AfterClickDialog(d_code);
     }
     public void ChangeColor()
     {

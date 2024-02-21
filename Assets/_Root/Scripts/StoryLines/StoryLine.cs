@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -19,12 +17,12 @@ public class StoryLine : MonoBehaviour, IAfterClickDialog
     }
     public virtual void GetLine(int indexLine) { }
 
-    public void AfterClickDialog()
+    public void AfterClickDialog(int code)
     {
         DialogController.Instance.HideAllDialog();
         DialogController.Instance.isTalking = true;
         StoryLineController.Instance.SetStoryLine(this);
-        StoryLineController.Instance.SetIndexTextDetailCurrent(0);
+        StoryLineController.Instance.SetIndexTextDetailCurrent(code);
         StoryLineController.Instance.GetLine();
     }
 }

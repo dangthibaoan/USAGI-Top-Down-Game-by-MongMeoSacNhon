@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -89,7 +87,7 @@ public class StoryLineController : Singleton<StoryLineController>
             if (texts.lineNumber == indexTextDetailCurrent && texts.idCharacter == ConfigController.CharacterConfig.CharacterDatas[0].idCharacter)
             {
                 DialogController.Instance.isCreateReplyDialog = true;
-                DialogController.Instance.CreateDialogStoryLine(0, texts.txt, ConfigController.CharacterConfig.CharacterDatas[0].Character, StoryLineCurrent.idStoryLine, texts.nextLineNumber);
+                DialogController.Instance.CreateDialogInteract(texts.nextLineNumber, DialogType.Talk, texts.txt, StoryLineCurrent.transform.parent.gameObject);
             }
         });
     }
