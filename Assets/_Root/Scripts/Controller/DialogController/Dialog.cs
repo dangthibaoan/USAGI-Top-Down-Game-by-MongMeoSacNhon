@@ -21,7 +21,7 @@ public class Dialog : MonoBehaviour, IChangeColor
         colorOrigin = Background.color;
     }
 
-    public virtual void Click()
+    public void Click()
     {
         Debug.Log("Click dialog " + d_Txt.text);
 
