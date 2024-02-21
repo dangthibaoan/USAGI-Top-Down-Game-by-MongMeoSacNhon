@@ -18,7 +18,7 @@ public enum DialogType
 {
     nonDialogType,
     Talk,
-    Loot
+    Talk2
 }
 public enum IDStoryLine
 {

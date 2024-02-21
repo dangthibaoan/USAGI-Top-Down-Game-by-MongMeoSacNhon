@@ -7,10 +7,8 @@ public class TriggerNPC : Trigger
 {
     [SerializeField] private IDStoryLine idStoryLine;
     [SerializeField] private int indexStartStoryLine;
-    [SerializeField] private bool isDialogExist;
     protected override void Awake()
     {
-        base.Awake();
         trigger_text = gameObject.transform.parent.name;
         trigger_type = TriggerType.NonPlayer;
         isDialogExist = false;
@@ -30,7 +28,7 @@ public class TriggerNPC : Trigger
             if (triggerOther.trigger_type == TriggerType.Player && !isDialogExist)
             {
                 isDialogExist = true;
-                DialogController.Instance.CreateDialog(
+                DialogController.Instance.CreateDialogStoryLine(
                     trigger_index,
                     trigger_text,
                     transform.parent.gameObject,

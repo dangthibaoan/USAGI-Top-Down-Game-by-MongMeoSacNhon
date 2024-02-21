@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class TriggerItem : Trigger
 {
-    private bool isDialogExist;
     protected override void Awake()
     {
-        base.Awake();
         trigger_text = gameObject.transform.parent.name;
         trigger_type = TriggerType.NonPlayer;
         isDialogExist = false;
@@ -20,7 +18,7 @@ public class TriggerItem : Trigger
             if (triggerOther.trigger_type == TriggerType.Player && !isDialogExist)
             {
                 isDialogExist = true;
-                DialogController.Instance.CreateDialog(trigger_index, trigger_text, transform.parent.gameObject);
+                DialogController.Instance.CreateDialogInteract(trigger_index, trigger_text, transform.parent.gameObject);
             }
         }
     }

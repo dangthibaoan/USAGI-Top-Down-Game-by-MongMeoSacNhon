@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 6440077945659534591}
   - component: {fileID: 2066731183049013958}
   - component: {fileID: 6911415910569235246}
-  - component: {fileID: 6526308231094381897}
+  - component: {fileID: -5264446584761118123}
   - component: {fileID: 1632943353644880911}
   m_Layer: 5
-  m_Name: Dialog
+  m_Name: DialogStoryLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6526308231094381897
+--- !u!114 &-5264446584761118123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 776015352036413766}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1552a4a85be789429fa348f0c5bd4d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 95480163a799bcf48ac8883abf92439c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Background: {fileID: 6911415910569235246}
@@ -98,7 +98,9 @@ MonoBehaviour:
   d_Icon: {fileID: 5542893405322362961}
   d_Txt: {fileID: 4441252445898057658}
   d_GameObj: {fileID: 0}
-  d_type: 0
+  d_type: 1
+  d_idStoryLine: 0
+  d_indexStoryLineText: 0
 --- !u!114 &1632943353644880911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,8 +118,8 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6526308231094381897}
-        m_TargetAssemblyTypeName: Dialog, Assembly-CSharp
+      - m_Target: {fileID: -5264446584761118123}
+        m_TargetAssemblyTypeName: DialogStoryLine, Assembly-CSharp
         m_MethodName: Click
         m_Mode: 1
         m_Arguments:
@@ -198,7 +200,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e15a0aaf619d8aa429bd091186fb29a2, type: 3}
+  m_Sprite: {fileID: -2969016694365801900, guid: 20d6cce5c7ac33b4e97f0f98a09aa347,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

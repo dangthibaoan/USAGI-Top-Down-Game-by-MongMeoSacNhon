@@ -17,7 +17,8 @@ public class SoundController : Singleton<SoundController>
     {
         BackgroundAudio.loop = true;
 
-        for (int i = 0; i < Enum.GetNames(typeof(SoundType)).Length; i++) // hoac set dk: i < ConfigController.Sound.SoundDatas.Count
+        // for (int i = 0; i < Enum.GetNames(typeof(SoundType)).Length; i++)
+        for (int i = 0; i < ConfigController.SoundConfig.SoundDatas.Count; i++)
         {
             SoundData soundData = ConfigController.SoundConfig.SoundDatas.Find(item => item.SoundType == (SoundType)i);
             AudioClips.Add(soundData.Clip);

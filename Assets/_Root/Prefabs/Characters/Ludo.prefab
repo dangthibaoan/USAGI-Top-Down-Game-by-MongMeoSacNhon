@@ -143,6 +143,7 @@ Transform:
   - {fileID: 7447828742227486721}
   - {fileID: 6060028600362921573}
   - {fileID: 1987983907640173908}
+  - {fileID: 1433878758429183383}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -172,6 +173,53 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &6906609251937479083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1433878758429183383}
+  - component: {fileID: 6335094696852783196}
+  m_Layer: 0
+  m_Name: StoryLines
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1433878758429183383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6906609251937479083}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 6329422056345929137}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6335094696852783196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6906609251937479083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 698fb80f435f09e4abc6fa3f5236b89f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idStoryLine: 1
+  indexStoryLineTextCurrent: 0
+  indexStoryLineDataCurrent: 0
 --- !u!1 &7830878822002520885
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,10 +337,9 @@ GameObject:
   - component: {fileID: 1987983907640173908}
   - component: {fileID: 3126637899971478441}
   - component: {fileID: 1714948157946118315}
-  - component: {fileID: 301099106178121005}
-  - component: {fileID: 2006060251603975398}
+  - component: {fileID: 2224609476753106032}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: CircleTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -382,7 +429,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &301099106178121005
+--- !u!114 &2224609476753106032
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -391,25 +438,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 9012688483056334561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2c89a51bcedd364988868962bf7c650, type: 3}
+  m_Script: {fileID: 11500000, guid: b3503f0b6c8767f49b2b80a2655ca420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   trigger_type: 2
-  idStoryLine: 1
-  iDCharacter: 1
-  stt: 0
---- !u!114 &2006060251603975398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9012688483056334561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 698fb80f435f09e4abc6fa3f5236b89f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  idStoryLine: 1
-  indexStoryLineTextCurrent: 0
-  indexStoryLineDataCurrent: 0
+  isDialogExist: 0

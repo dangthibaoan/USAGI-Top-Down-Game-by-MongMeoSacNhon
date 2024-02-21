@@ -12,7 +12,7 @@ public class StoryLineController : Singleton<StoryLineController>
     [SerializeField] private Transform TalkBox;
     [SerializeField] private TMP_Text NameTalker, TalkText;
     [SerializeField] private Image TalkCursor;
-    [SerializeField] private Vector3 TalkCursorPositionOrigin, TalkBoxPositionOrigin;
+    private Vector3 TalkCursorPositionOrigin, TalkBoxPositionOrigin;
 
     [Header("Story Line Current")]
     [SerializeField] private StoryLineConfig storyLineConfig;
@@ -36,7 +36,7 @@ public class StoryLineController : Singleton<StoryLineController>
     {
         StoryLineCurrent = storyLine;
     }
-    public void SetIndexLineCurrent(int indexLine)
+    public void SetIndexTextDetailCurrent(int indexLine)
     {
         indexTextDetailCurrent = indexLine;
         DialogController.Instance.isCreateReplyDialog = false;
@@ -89,7 +89,7 @@ public class StoryLineController : Singleton<StoryLineController>
             if (texts.lineNumber == indexTextDetailCurrent && texts.idCharacter == ConfigController.CharacterConfig.CharacterDatas[0].idCharacter)
             {
                 DialogController.Instance.isCreateReplyDialog = true;
-                DialogController.Instance.CreateDialog(0, texts.txt, ConfigController.CharacterConfig.CharacterDatas[0].Character, StoryLineCurrent.idStoryLine, texts.nextLineNumber);
+                DialogController.Instance.CreateDialogStoryLine(0, texts.txt, ConfigController.CharacterConfig.CharacterDatas[0].Character, StoryLineCurrent.idStoryLine, texts.nextLineNumber);
             }
         });
     }

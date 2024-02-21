@@ -158,8 +158,6 @@ MonoBehaviour:
   NameTalker: {fileID: 1249918529}
   TalkText: {fileID: 675513024}
   TalkCursor: {fileID: 1979940708}
-  TalkCursorPositionOrigin: {x: 0, y: 0, z: 0}
-  TalkBoxPositionOrigin: {x: 0, y: 0, z: 0}
   storyLineConfig: {fileID: 11400000, guid: cf7887bb5abe5654f93c4e309f292fd2, type: 2}
   indexTextDetailCurrent: 0
   StoryLineCurrent: {fileID: 0}
@@ -203,9 +201,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03ee4faf50b6ae41b2dfef17e47826e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogOriginal: {fileID: 6526308231094381897, guid: db9e0f460ed33da4f82d51c5c8bdd341,
-    type: 3}
   Content: {fileID: 1399616632}
+  dialogInteract: {fileID: 6526308231094381897, guid: db9e0f460ed33da4f82d51c5c8bdd341,
+    type: 3}
+  dialogStoryLine: {fileID: -5264446584761118123, guid: a59713d61cc37f049a6fc1215c4e22cd,
+    type: 3}
+  Icons:
+  - type: 0
+    icon: {fileID: 21300000, guid: e15a0aaf619d8aa429bd091186fb29a2, type: 3}
+  - type: 1
+    icon: {fileID: -8667803144176668281, guid: 1c9bc0d104c01934da10d4333b9dc48b, type: 3}
+  - type: 2
+    icon: {fileID: 3420474935965269878, guid: 1c9bc0d104c01934da10d4333b9dc48b, type: 3}
   isTalking: 0
   isCreateReplyDialog: 0
 --- !u!1 &144264466
@@ -1783,7 +1790,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1935723545}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1947,7 +1954,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -258, y: 100}
+  m_AnchoredPosition: {x: -258, y: 80}
   m_SizeDelta: {x: 350, y: 152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1787098005
@@ -2164,8 +2171,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2005415246}
   m_HandleRect: {fileID: 2005415245}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

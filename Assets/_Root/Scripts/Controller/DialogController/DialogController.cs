@@ -1,16 +1,32 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
-
+[Serializable]
+public class Icon
+{
+    public DialogType type;
+    public Sprite icon;
+}
 public class DialogController : Singleton<DialogController>
 {
-    [SerializeField] private Dialog dialogOriginal;
     [SerializeField] private Transform Content;
+    [SerializeField] private Dialog dialogInteract;
+    [SerializeField] private DialogStoryLine dialogStoryLine;
+    [SerializeField] private List<Icon> Icons;
     public bool isTalking = false, isCreateReplyDialog = false;
 
-    public void CreateDialog(int sttItem, string txtDialog, GameObject gameObj, IDStoryLine idStoryLine, int indexStoryLineText)
+    private void Start()
     {
-        // isCreateReplyDialog = true;
-
-        var dialogInstance = Instantiate(dialogOriginal, Content);
+        Init();
+    }
+    public void Init()
+    {
+        isTalking = false;
+        isCreateReplyDialog = false;
+    }
+    public void CreateDialogStoryLine(int sttItem, string txtDialog, GameObject gameObj, IDStoryLine idStoryLine, int indexStoryLineText)
+    {
+        var dialogInstance = Instantiate(dialogStoryLine, Content);
 
         if (gameObj == ConfigController.CharacterConfig.CharacterDatas[0].Character)
             dialogInstance.gameObject.SetActive(true);
@@ -24,23 +40,20 @@ public class DialogController : Singleton<DialogController>
         dialogInstance.d_GameObj = gameObj;
         dialogInstance.d_idStoryLine = idStoryLine;
         dialogInstance.d_indexStoryLineText = indexStoryLineText;
-        Debug.Log("Created dialog talk number " + dialogInstance.d_Index + ": <<" + txtDialog + ">> with game object <<" + gameObj.name + ">>");
+        Debug.Log("Created dialog story line number " + dialogInstance.d_Index + ": <<" + txtDialog + ">> with game object <<" + gameObj.name + ">>");
     }
-    public void CreateDialog(int sttItem, string txtDialog, GameObject gameObj)
+    public void CreateDialogInteract(int sttItem, string txtDialog, GameObject gameObj)
     {
-        // isCreateReplyDialog = true;
-
-        var dialogInstance = Instantiate(dialogOriginal, Content);
+        var dialogInstance = Instantiate(dialogInteract, Content);
 
         dialogInstance.gameObject.SetActive(!isTalking);
 
-        dialogInstance.d_type = DialogType.Loot;
+        dialogInstance.d_type = DialogType.nonDialogType;
         dialogInstance.d_Index = Content.childCount - 1;
         dialogInstance.d_Icon.sprite = ConfigController.CharacterConfig.CharacterDatas[sttItem].Icon;
         dialogInstance.d_Txt.text = txtDialog;
         dialogInstance.d_GameObj = gameObj;
-        dialogInstance.d_idStoryLine = IDStoryLine.nonStoryLine;
-        Debug.Log("Created dialog loot number " + dialogInstance.d_Index + ": <<" + txtDialog + ">> with game object <<" + gameObj + ">>");
+        Debug.Log("Created dialog interact number " + dialogInstance.d_Index + ": <<" + txtDialog + ">> with game object <<" + gameObj + ">>");
     }
     public void ResetDialog()
     {
