@@ -2,17 +2,12 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 [Serializable]
-public class Icon
-{
-    public DialogType type;
-    public Sprite icon;
-}
+
 public class DialogController : Singleton<DialogController>
 {
     [SerializeField] private Transform Content;
     [SerializeField] private Dialog dialogInteract;
     [SerializeField] private DialogStoryLine dialogStoryLine;
-    [SerializeField] private List<Icon> Icons;
     public bool isTalking = false, isCreateReplyDialog = false;
 
     private void Start()
