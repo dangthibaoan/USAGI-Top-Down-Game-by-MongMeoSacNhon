@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class StoryLine : MonoBehaviour, IAfterClickDialog
 {
-    public IDStoryLine idStoryLine;
-    public int indexStoryLineTextCurrent, indexStoryLineDataCurrent;
+    [SerializeField] protected IDStoryLine idStoryLine;
+    [SerializeField] protected int indexStoryLineTextCurrent;
+    [SerializeField] protected int indexStoryLineDataCurrent;
     protected void GetIndexStoryLineData(IDStoryLine idStoryLine)
     {
         StoryLineController.StoryLineConfig.StoryLineDatas.ToList().ForEach(_data =>
@@ -15,6 +16,8 @@ public class StoryLine : MonoBehaviour, IAfterClickDialog
             }
         });
     }
+    public int GetIndexStoryLineDataCurrent() => indexStoryLineDataCurrent;
+
     public virtual void GetLine(int indexLine) { }
 
     public void AfterClickDialog(int code)

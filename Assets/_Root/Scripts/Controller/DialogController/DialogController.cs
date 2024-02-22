@@ -38,7 +38,7 @@ public class DialogController : Singleton<DialogController>
         for (int i = 0; i < Content.transform.childCount; i++)
         {
             var dialog = Content.GetChild(i).GetComponent<Dialog>();
-            if (dialog.d_code != 0)
+            if (dialog.d_type != DialogType.nonDialogType)
             {
                 Destroy(dialog.gameObject);
             }

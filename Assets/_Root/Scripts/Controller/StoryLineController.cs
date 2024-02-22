@@ -73,7 +73,7 @@ public class StoryLineController : Singleton<StoryLineController>
         TalkBox.gameObject.SetActive(true);
         TalkBox.DOMove(TalkBoxPositionOrigin, 0.5f);
 
-        int next = StoryLineConfig.StoryLineDatas[StoryLineCurrent.indexStoryLineDataCurrent].StoryLineTexts[indexTextDetailCurrent].nextLineNumber;
+        int next = StoryLineConfig.StoryLineDatas[StoryLineCurrent.GetIndexStoryLineDataCurrent()].StoryLineTexts[indexTextDetailCurrent].nextLineNumber;
         indexTextDetailCurrent = next;
 
         if (next < 0) return;
@@ -82,7 +82,7 @@ public class StoryLineController : Singleton<StoryLineController>
     }
     private void CheckForCreateDialogReply()
     {
-        StoryLineConfig.StoryLineDatas[StoryLineCurrent.indexStoryLineDataCurrent].StoryLineTexts.ToList().ForEach(texts =>
+        StoryLineConfig.StoryLineDatas[StoryLineCurrent.GetIndexStoryLineDataCurrent()].StoryLineTexts.ToList().ForEach(texts =>
         {
             if (texts.lineNumber == indexTextDetailCurrent && texts.idCharacter == ConfigController.CharacterConfig.CharacterDatas[0].idCharacter)
             {
